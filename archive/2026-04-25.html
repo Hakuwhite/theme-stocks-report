@@ -108,7 +108,11 @@
     border-radius: var(--radius);
     padding: 20px 24px;
     margin-bottom: 12px;
+    border-left: 4px solid var(--border);
   }
+  .card.card-bull { border-left-color: var(--red-text); }
+  .card.card-bear { border-left-color: var(--blue-text); }
+  .card.card-neutral { border-left-color: var(--text3); }
   .card .badges {
     display: flex;
     align-items: center;
@@ -126,8 +130,8 @@
   .badge-conf-high { background: var(--red-badge); color: var(--red-text); }
   .badge-conf-mid { background: var(--amber-bg); color: var(--amber-text); }
   .badge-conf-low { background: var(--blue-bg); color: var(--blue-text); }
-  .badge-bull { background: var(--green-badge); color: var(--green-text); }
-  .badge-bear { background: var(--red-badge); color: var(--red-text); }
+  .badge-bull { background: var(--red-badge); color: var(--red-text); }
+  .badge-bear { background: var(--blue-bg); color: var(--blue-text); }
   .badge-neutral { background: var(--gray-badge); color: var(--gray-badge-text); }
   .badge-news { font-size: 11px; color: var(--text3); padding: 3px 0; }
   .card h2 {
@@ -190,7 +194,11 @@
     border: 0.5px solid var(--border);
     border-radius: var(--radius);
     padding: 16px 18px;
+    border-left: 4px solid var(--border);
   }
+  .compact-card.card-bull { border-left-color: var(--red-text); }
+  .compact-card.card-bear { border-left-color: var(--blue-text); }
+  .compact-card.card-neutral { border-left-color: var(--text3); }
   .compact-card .badges {
     display: flex;
     align-items: center;
@@ -226,7 +234,7 @@
 <div class="container">
   <div class="header">
     <h1>テーマ株 朝刊レポート</h1>
-    <div class="meta">2026年04月25日（土）23:09 配信 ／ ニュース400件分析</div>
+    <div class="meta">2026年04月25日（土）23:28 配信 ／ ニュース400件分析</div>
   </div>
 
   <div class="stats">
@@ -244,44 +252,27 @@
     </div>
     <div class="stat">
       <div class="label">市場ムード</div>
-      <div class="value" style="color: #dc2626;">強気</div>
+      <div class="value" style="color: #737373;">中立</div>
     </div>
   </div>
 
-  <div class="card">
+  <div class="card card-bull">
     <div class="badges">
-      <span class="badge badge-conf-mid">確信度 55%</span>
-      <span class="badge badge-bear">弱気</span>
-      <span class="badge-news">13件のニュース</span>
-    </div>
-    <h2>原油・エネルギー</h2>
-    <div class="summary">石油・ガス・電力関連</div>
-    <div class="sectors"><div class="sector-group">
-              <div class="sector-label bull">注目セクター</div>
-              <div class="sector-tags"><span class="sector-tag bull">空運</span><span class="sector-tag bull">海運</span><span class="sector-tag bull">化学</span><span class="sector-tag bull">電力・ガス</span><span class="sector-tag bull">自動車</span></div>
-            </div><div class="sector-group">
-              <div class="sector-label bear">警戒セクター</div>
-              <div class="sector-tags"><span class="sector-tag bear">石油元売り</span><span class="sector-tag bear">資源開発</span><span class="sector-tag bear">商社（資源系）</span></div>
-            </div></div>
-    <div class="trade-idea">原油価格の方向性次第で明暗分かれる。和平なら燃料コスト減でANA・JAL上昇、戦争継続ならINPEX・ENEOSに注目。</div>
-  </div>
-<div class="card">
-    <div class="badges">
-      <span class="badge badge-conf-high">確信度 75%</span>
+      <span class="badge badge-conf-high">注目度 75%</span>
       <span class="badge badge-bull">強気</span>
-      <span class="badge-news">6件のニュース</span>
+      <span class="badge-news">8件のニュース</span>
     </div>
     <h2>半導体</h2>
     <div class="summary">半導体製造装置・材料・設計関連</div>
     <div class="sectors"><div class="sector-group">
               <div class="sector-label bull">注目セクター</div>
-              <div class="sector-tags"><span class="sector-tag bull">半導体製造装置</span><span class="sector-tag bull">半導体材料</span><span class="sector-tag bull">EDA・設計ツール</span><span class="sector-tag bull">データセンター関連</span><span class="sector-tag bull">AI関連</span><span class="sector-tag bull">半導体商社</span></div>
+              <div class="sector-tags"><span class="sector-tag bull">半導体製造装置</span><span class="sector-tag bull">半導体材料</span><span class="sector-tag bull">半導体商社</span><span class="sector-tag bull">EDA・設計ツール</span></div>
             </div></div>
-    <div class="trade-idea">Intel爆騰は日本の半導体製造装置・材料銘柄にも波及効果大。東京エレクトロン、レーザーテック、信越化学等に注目。</div>
+    <div class="trade-idea">Intel好決算がCPU需要回復を示唆。東京エレクトロン・レーザーテック等製造装置株の寄付きに要注目。</div>
   </div>
-<div class="card">
+<div class="card card-bull">
     <div class="badges">
-      <span class="badge badge-conf-high">確信度 80%</span>
+      <span class="badge badge-conf-high">注目度 75%</span>
       <span class="badge badge-bull">強気</span>
       <span class="badge-news">6件のニュース</span>
     </div>
@@ -289,44 +280,18 @@
     <div class="summary">AI関連サービス・インフラ</div>
     <div class="sectors"><div class="sector-group">
               <div class="sector-label bull">注目セクター</div>
-              <div class="sector-tags"><span class="sector-tag bull">ソフトウェア・情報処理</span><span class="sector-tag bull">データセンター</span><span class="sector-tag bull">クラウドサービス</span><span class="sector-tag bull">半導体</span><span class="sector-tag bull">電子部品</span><span class="sector-tag bull">精密機器</span></div>
+              <div class="sector-tags"><span class="sector-tag bull">半導体製造装置</span><span class="sector-tag bull">半導体材料</span><span class="sector-tag bull">EDA・設計ツール</span><span class="sector-tag bull">データセンター関連</span><span class="sector-tag bull">クラウドサービス</span></div>
             </div></div>
-    <div class="trade-idea">AI実装段階への移行でインフラ需要拡大。日本ではソフトバンクG、富士通、NEC、キーエンス等のAI関連銘柄が恩恵。</div>
+    <div class="trade-idea">AI半導体需要拡大の恩恵は製造装置→材料→後工程の順で波及。東京エレク・レーザーテック・信越化学等に注目。</div>
   </div>
-<div class="card">
-    <div class="badges">
-      <span class="badge badge-conf-high">確信度 65%</span>
-      <span class="badge badge-bear">弱気</span>
-      <span class="badge-news">6件のニュース</span>
-    </div>
-    <h2>自動車</h2>
-    <div class="summary">‘We will not survive’: Toyota, Honda and Ford CEOs issue chilling warning about China — and it could hit your portfolio</div>
-    <div class="sectors"><div class="sector-group">
-              <div class="sector-label bull">注目セクター</div>
-              <div class="sector-tags"><span class="sector-tag bull">電気自動車関連</span><span class="sector-tag bull">自動車部品（電動化）</span><span class="sector-tag bull">充電インフラ</span></div>
-            </div><div class="sector-group">
-              <div class="sector-label bear">警戒セクター</div>
-              <div class="sector-tags"><span class="sector-tag bear">従来型自動車メーカー</span><span class="sector-tag bear">内燃機関関連部品</span></div>
-            </div></div>
-    <div class="trade-idea">中国勢との競争激化でトヨタ・ホンダに逆風。電動化・自動運転関連の日本電産、デンソー等の部品メーカーは選別買い。</div>
-  </div>
-<div class="compact-grid"><div class="compact-card">
+<div class="compact-grid"><div class="compact-card card-bull">
       <div class="badges">
         <span class="badge badge-conf-low">24%</span>
         <span class="badge badge-bull">強気</span>
       </div>
-      <h3>円安メリット</h3>
-      <div class="summary">輸出企業・円安恩恵</div>
-      <div class="summary" style="margin-top:6px;font-size:12px;">米株高の波及で輸出関連に追い風。自動車、電機、半導体関連の主力株が牽引役として期待される。</div>
-    </div>
-<div class="compact-card">
-      <div class="badges">
-        <span class="badge badge-conf-low">24%</span>
-        <span class="badge badge-neutral">中立</span>
-      </div>
-      <h3>金融</h3>
-      <div class="summary">&lt;NQN&gt;◇日本株ＡＤＲ24日、売り優勢　野村やトヨタが下落</div>
-      <div class="summary" style="margin-top:6px;font-size:12px;">三井住友FG・三菱UFJが上昇。日本の金融株も米国の動きに連動して選別物色が続く可能性。</div>
+      <h3>金利上昇</h3>
+      <div class="summary">銀行・保険（金利上昇メリット）</div>
+      <div class="summary" style="margin-top:6px;font-size:12px;">三井住友FG・三菱UFJ上昇が示すように、金利上昇期待で金融株物色継続。メガバンクの決算に注目。</div>
     </div>
 </div>
 
