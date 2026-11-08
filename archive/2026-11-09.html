@@ -1,0 +1,2573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Signal - 2026年11月09日</title>
+<style>
+:root {
+  --bg: #ffffff; --bg2: #f7f7f5; --bg3: #f0efe9;
+  --text: #1a1a1a; --text2: #666660; --text3: #999990;
+  --border: rgba(0,0,0,0.08); --border2: rgba(0,0,0,0.15);
+  --green-bg: #ecfdf5; --green-text: #065f46; --green-badge: #d1fae5;
+  --red-bg: #fef2f2; --red-text: #991b1b; --red-badge: #fee2e2;
+  --blue-bg: #eff6ff; --blue-text: #1e40af;
+  --amber-bg: #fffbeb; --amber-text: #92400e;
+  --gray-badge: #f3f4f6; --gray-badge-text: #4b5563;
+  --radius: 12px; --radius-sm: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a; --bg2: #242420; --bg3: #2e2e28;
+    --text: #e8e8e0; --text2: #a0a098; --text3: #707068;
+    --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.15);
+    --green-bg: #052e16; --green-text: #86efac; --green-badge: #064e3b;
+    --red-bg: #450a0a; --red-text: #fca5a5; --red-badge: #7f1d1d;
+    --blue-bg: #172554; --blue-text: #93c5fd;
+    --amber-bg: #451a03; --amber-text: #fcd34d;
+    --gray-badge: #374151; --gray-badge-text: #d1d5db;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans',
+               'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  background: var(--bg3); color: var(--text); line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem; }
+.header { margin-bottom: 1.5rem; }
+.header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
+.header .meta { font-size: 13px; color: var(--text3); }
+
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.stat {
+  background: var(--bg); border-radius: var(--radius); padding: 14px 16px;
+  border: 0.5px solid var(--border);
+}
+.stat .label { font-size: 12px; color: var(--text3); margin-bottom: 2px; }
+.stat .value { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
+
+.section {
+  background: var(--bg); border-radius: var(--radius);
+  padding: 20px 24px; margin-bottom: 1.5rem;
+  border: 0.5px solid var(--border);
+}
+.section-title {
+  font-size: 18px; font-weight: 600; letter-spacing: -0.01em;
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+.section-meta { font-size: 13px; color: var(--text3); margin-bottom: 12px; }
+
+.subsection { margin-top: 16px; }
+.subsection-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+
+.card {
+  background: var(--bg); border: 0.5px solid var(--border);
+  border-radius: var(--radius); padding: 20px 24px; margin-bottom: 12px;
+  border-left: 4px solid var(--border);
+}
+.card.card-bull { border-left-color: var(--red-text); }
+.card.card-bear { border-left-color: var(--blue-text); }
+.card.card-neutral { border-left-color: var(--text3); }
+.card .badges { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+.badge-conf-high { background: var(--red-badge); color: var(--red-text); }
+.badge-conf-mid { background: var(--amber-bg); color: var(--amber-text); }
+.badge-conf-low { background: var(--blue-bg); color: var(--blue-text); }
+.badge-bull { background: var(--red-badge); color: var(--red-text); }
+.badge-bear { background: var(--blue-bg); color: var(--blue-text); }
+.badge-neutral { background: var(--gray-badge); color: var(--gray-badge-text); }
+.badge-news { font-size: 11px; color: var(--text3); padding: 3px 0; }
+.card h2 { font-size: 18px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
+.card .summary { font-size: 14px; color: var(--text2); line-height: 1.7; margin-bottom: 14px; }
+
+.sectors { display: flex; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+.sector-group { flex: 1; min-width: 140px; }
+.sector-label { font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.sector-label.bull { color: var(--red-text); }
+.sector-label.bear { color: var(--blue-text); }
+.sector-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.sector-tag { font-size: 11px; padding: 2px 8px; border-radius: 20px; }
+.sector-tag.bull { background: var(--green-bg); color: var(--green-text); }
+.sector-tag.bear { background: var(--red-bg); color: var(--red-text); }
+
+.top-stocks { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+.stock-pill {
+  font-size: 12px; padding: 3px 10px; border-radius: 14px;
+  background: var(--bg2); color: var(--text2);
+}
+
+.trade-idea {
+  background: var(--bg2); border-radius: var(--radius-sm);
+  padding: 10px 14px; font-size: 13px; color: var(--text2); line-height: 1.6;
+}
+
+.compact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.compact-card {
+  background: var(--bg); border: 0.5px solid var(--border);
+  border-radius: var(--radius); padding: 16px 18px;
+  border-left: 4px solid var(--border);
+}
+.compact-card.card-bull { border-left-color: var(--red-text); }
+.compact-card.card-bear { border-left-color: var(--blue-text); }
+.compact-card.card-neutral { border-left-color: var(--text3); }
+.compact-card .badges { display: flex; align-items: center; gap: 4px; margin-bottom: 6px; }
+.compact-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.compact-card .summary { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+.news-list { list-style: none; padding: 0; }
+.news-list li {
+  padding: 10px 0; border-bottom: 0.5px solid var(--border);
+}
+.news-list li:last-child { border-bottom: none; }
+
+.table-wrap { overflow-x: auto; }
+.stocks-table {
+  width: 100%; border-collapse: collapse; font-size: 13px;
+}
+.stocks-table th, .stocks-table td {
+  padding: 8px 10px; text-align: left; border-bottom: 0.5px solid var(--border);
+}
+.stocks-table th {
+  font-size: 11px; color: var(--text3); font-weight: 500; text-transform: uppercase;
+}
+.stocks-table .rank { color: var(--text3); width: 32px; }
+.stocks-table .code { font-family: 'Menlo', monospace; }
+.stocks-table .theme-cell { color: var(--text3); font-size: 12px; }
+
+.catalyst-card {
+  background: var(--bg2); border-radius: var(--radius);
+  padding: 14px 18px; margin-bottom: 12px;
+  border: 0.5px solid var(--border);
+}
+.catalyst-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap;
+}
+.catalyst-rank {
+  background: var(--text); color: var(--bg);
+  width: 24px; height: 24px; border-radius: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600;
+}
+.catalyst-code { font-family: 'Menlo', monospace; font-weight: 600; }
+.catalyst-name { font-weight: 500; flex: 1; }
+.catalyst-row { display: flex; gap: 10px; padding: 4px 0; font-size: 13px; line-height: 1.6; }
+.catalyst-label {
+  flex-shrink: 0; width: 70px; font-size: 12px;
+  color: var(--text3); font-weight: 500; padding-top: 2px;
+}
+.catalyst-text { flex: 1; color: var(--text); }
+.catalyst-rationale {
+  margin-top: 8px; padding: 8px 12px;
+  background: var(--bg); border-radius: var(--radius-sm);
+  font-size: 12px; color: var(--text2); line-height: 1.5;
+}
+
+.stock-details { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.stock-detail {
+  background: var(--bg); border-radius: var(--radius-sm);
+  padding: 10px 12px; border: 0.5px solid var(--border);
+}
+.stock-detail-head {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.stock-code { font-family: 'Menlo', monospace; }
+.stock-name { font-weight: 500; flex: 1; min-width: 100px; }
+.stock-tv { color: var(--text3); font-size: 12px; margin-left: auto; }
+.stock-industry { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+.stock-desc { font-size: 12px; color: var(--text3); line-height: 1.5; }
+
+.stock-card {
+  background: var(--bg); border-radius: var(--radius);
+  border: 0.5px solid var(--border); margin-bottom: 14px;
+  overflow: hidden;
+}
+.stock-card-head {
+  background: var(--bg2); padding: 12px 18px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.stock-score { margin-left: auto; color: var(--text2); font-size: 13px; }
+.stock-card-body { padding: 12px 18px; }
+.stock-meta-row {
+  display: flex; gap: 12px; padding: 6px 0;
+  font-size: 13px; line-height: 1.6;
+  border-top: 0.5px solid var(--border);
+}
+.stock-meta-row:first-child { border-top: none; }
+.meta-label {
+  flex-shrink: 0; width: 80px;
+  color: var(--text3); font-size: 12px; font-weight: 500;
+}
+.stock-meta-row > span:last-child { flex: 1; }
+
+.catalyst-divider {
+  margin-top: 12px; padding-top: 10px;
+  border-top: 0.5px dashed var(--border2);
+  font-size: 13px; font-weight: 600;
+  color: var(--text2);
+  display: flex; align-items: center; gap: 6px;
+}
+
+.news-list-inline { margin-top: 12px; }
+
+.cost-section { background: var(--bg2); }
+.cost-grid { display: flex; gap: 16px; flex-wrap: wrap; }
+.cost-cell { flex: 1; min-width: 120px; }
+.cost-label { font-size: 12px; color: var(--text3); margin-bottom: 4px; }
+.cost-value { font-size: 22px; font-weight: 600; }
+.cost-sub { font-size: 11px; color: var(--text3); }
+
+.footer {
+  font-size: 12px; color: var(--text3); padding: 14px 0;
+  border-top: 0.5px solid var(--border2); margin-top: 1rem; text-align: center;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 1rem; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .compact-grid { grid-template-columns: 1fr; }
+  .header h1 { font-size: 22px; }
+  .stocks-table { font-size: 11px; }
+  .stocks-table th, .stocks-table td { padding: 6px 8px; }
+  .catalyst-row { flex-direction: column; gap: 2px; }
+  .catalyst-label { width: auto; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Market Signal</h1>
+    <div class="meta">2026年11月09日（月）08:20 配信
+      ／ 対象日: 20261109</div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">📡 本日のテーマ＆ニュース解説</h2>
+    <div class="section-meta">⚠ tachibana 0件 / ✓ finnhub 33件</div>
+    <div class="card card-neutral">
+    <div class="badges">
+      <span class="badge badge-conf-high">注目度 75%</span>
+      <span class="badge badge-neutral">中立</span>
+      <span class="badge-news">11件のニュース</span>
+    </div>
+    <h2>AI・生成AI</h2>
+    <div class="summary">AI関連サービス・インフラ</div>
+    
+    
+    
+  </div><div class="card card-neutral">
+    <div class="badges">
+      <span class="badge badge-conf-high">注目度 65%</span>
+      <span class="badge badge-neutral">中立</span>
+      <span class="badge-news">5件のニュース</span>
+    </div>
+    <h2>再生可能エネルギー</h2>
+    <div class="summary">再生可能エネルギー・EV関連</div>
+    
+    
+    
+  </div><div class="card card-neutral">
+    <div class="badges">
+      <span class="badge badge-conf-low">注目度 20%</span>
+      <span class="badge badge-neutral">中立</span>
+      <span class="badge-news">1件のニュース</span>
+    </div>
+    <h2>半導体</h2>
+    <div class="summary">半導体製造装置・材料・設計関連</div>
+    
+    
+    
+  </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">💸 セクター別 資金フロー</h2>
+    <div class="section-meta" style="color:var(--text2);margin-bottom:8px;">時系列: 米国市場(前夜)の終値 → 日本市場(本日)の寄付前 という順番で米国を先行指標として参照しています。</div>
+    <div class="section-meta">為替レート: <strong>1ドル = ¥158.43</strong> （リアルタイム・取得 2026-11-09 08:00）</div>
+    <div class="subsection">
+      <h3 class="subsection-title">🇺🇸 米国セクター資金フロー（11/6 終値）</h3>
+      <div class="sector-label" style="color:var(--text2);">売買代金ランキング TOP10（▲=加重平均+ 資金流入 ▼=加重平均- 資金流出）</div>
+      <div class="card card-bull" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▲ 半導体</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                49銘柄 (46↑/3↓) ・ 売買代金合計 25.1兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--red-text);font-weight:700;font-size:15px;">時価総額加重 +4.59%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 +5.49%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>NVDA</strong></span>
+                    <span class="stock-name">エヌビディア</span>
+                    <span style="color:var(--red-text);font-weight:600;">+2.78%</span>
+                    <span class="stock-tv">5.4兆円</span>
+                  </div>
+                  <div class="stock-industry">[半導体]</div>
+                  <div class="stock-desc">パソコン上で使用されるグラフィックチップ製造</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>MU</strong></span>
+                    <span class="stock-name">マイクロン・テクノロジー</span>
+                    <span style="color:var(--red-text);font-weight:600;">+5.12%</span>
+                    <span class="stock-tv">4.9兆円</span>
+                  </div>
+                  <div class="stock-industry">[半導体]</div>
+                  <div class="stock-desc">DRAM、NAND、CMOSイメージ・センサー、その他半導体部品を製造</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>AMD</strong></span>
+                    <span class="stock-name">アドバンスト・マイクロ・デバイセズ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+11.04%</span>
+                    <span class="stock-tv">3.2兆円</span>
+                  </div>
+                  <div class="stock-industry">[半導体]</div>
+                  <div class="stock-desc">半導体の製造、研究・開発、販売拠点、管理用施設を世界中に保有</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>INTC</strong></span>
+                    <span class="stock-name">インテル</span>
+                    <span style="color:var(--red-text);font-weight:600;">+7.71%</span>
+                    <span class="stock-tv">1.5兆円</span>
+                  </div>
+                  <div class="stock-industry">[半導体]</div>
+                  <div class="stock-desc">コンピュータや情報通信業界向け総合デジタル技術製品を提供する半導体メーカー</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>AVGO</strong></span>
+                    <span class="stock-name">ブロードコム</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.74%</span>
+                    <span class="stock-tv">1.5兆円</span>
+                  </div>
+                  <div class="stock-industry">[半導体]</div>
+                  <div class="stock-desc">アナログ半導体装置のグローバルサプライヤー</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ ソフトウェア</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                110銘柄 (42↑/68↓) ・ 売買代金合計 12.9兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -0.09% <span style="font-size:11px;color:var(--text3);margin-left:4px;">(売買代金加重 <span style="color:var(--red-text)">+1.00%</span> — 大型に資金集中の兆候)</span></div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -0.19%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>MSFT</strong></span>
+                    <span class="stock-name">マイクロソフト</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.99%</span>
+                    <span class="stock-tv">2.2兆円</span>
+                  </div>
+                  <div class="stock-industry">[ソフトウェア]</div>
+                  <div class="stock-desc">コンピュータに搭載されるOS、各種ソフトウエア製品の開発、製造</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>ORCL</strong></span>
+                    <span class="stock-name">オラクル</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.82%</span>
+                    <span class="stock-tv">8635億円</span>
+                  </div>
+                  <div class="stock-industry">[ソフトウェア]</div>
+                  <div class="stock-desc">企業向けソフトウェア、ハードウェアサービスの提供</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>APP</strong></span>
+                    <span class="stock-name">アップラビン</span>
+                    <span style="color:var(--red-text);font-weight:600;">+9.86%</span>
+                    <span class="stock-tv">7070億円</span>
+                  </div>
+                  <div class="stock-industry">[ソフトウェア]</div>
+                  <div class="stock-desc">モバイルアプリエコシステムの成長に焦点を当てた米国のモバイルアプリテクノロジー企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>PLTR</strong></span>
+                    <span class="stock-name">パランティア・テクノロジーズ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+3.48%</span>
+                    <span class="stock-tv">6189億円</span>
+                  </div>
+                  <div class="stock-industry">[ソフトウェア]</div>
+                  <div class="stock-desc">ビッグデータ分析を専門に行う米国の企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>CRWV</strong></span>
+                    <span class="stock-name">コアウィーブ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+6.28%</span>
+                    <span class="stock-tv">4285億円</span>
+                  </div>
+                  <div class="stock-industry">[ソフトウェア]</div>
+                  <div class="stock-desc">ソフトウェアソリューションとクラウドサービスを提供する企業</div>
+                </div></div>
+        </div><div class="card card-bull" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▲ ハードウェア・電子機器</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                50銘柄 (39↑/11↓) ・ 売買代金合計 11.0兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--red-text);font-weight:700;font-size:15px;">時価総額加重 +1.58% <span style="font-size:11px;color:var(--text3);margin-left:4px;">(売買代金加重 <span style="color:var(--red-text)">+3.34%</span> — 大型に資金集中の兆候)</span></div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 +5.00%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>AAPL</strong></span>
+                    <span class="stock-name">アップル</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.52%</span>
+                    <span class="stock-tv">2.4兆円</span>
+                  </div>
+                  <div class="stock-industry">[ハードウェア]</div>
+                  <div class="stock-desc">iPhoneなどデジタル家電製品の開発・販売</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>SNDK</strong></span>
+                    <span class="stock-name">サンディスク</span>
+                    <span style="color:var(--red-text);font-weight:600;">+3.55%</span>
+                    <span class="stock-tv">2.4兆円</span>
+                  </div>
+                  <div class="stock-industry">[ハードウェア]</div>
+                  <div class="stock-desc">メモリカード、USBフラッシュドライブ等を提供する企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>STX</strong></span>
+                    <span class="stock-name">シーゲイト・テクノロジー・ホールディ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.19%</span>
+                    <span class="stock-tv">6110億円</span>
+                  </div>
+                  <div class="stock-industry">[ハードウェア]</div>
+                  <div class="stock-desc">電子データストレージソリューションズのプロバイダー</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>WDC</strong></span>
+                    <span class="stock-name">ウエスタン・デジタル</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.44%</span>
+                    <span class="stock-tv">5090億円</span>
+                  </div>
+                  <div class="stock-industry">[ハードウェア]</div>
+                  <div class="stock-desc">デジタル・コンテンツの製作、管理、活用、保存ができるストレージ製品の開発、製造</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>COHR</strong></span>
+                    <span class="stock-name">コヒレント</span>
+                    <span style="color:var(--red-text);font-weight:600;">+13.58%</span>
+                    <span class="stock-tv">4892億円</span>
+                  </div>
+                  <div class="stock-industry">[ハードウェア]</div>
+                  <div class="stock-desc">高精度応用ハイテク材料及び派生の精密部品の製造販売</div>
+                </div></div>
+        </div><div class="card card-bull" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▲ インターネット・デジタルメディア</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                12銘柄 (8↑/4↓) ・ 売買代金合計 5.3兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--red-text);font-weight:700;font-size:15px;">時価総額加重 +0.95%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 +0.80%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>GOOGL</strong></span>
+                    <span class="stock-name">アルファベット</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.78%</span>
+                    <span class="stock-tv">1.6兆円</span>
+                  </div>
+                  <div class="stock-industry">[双方向型メディア]</div>
+                  <div class="stock-desc">検索プラットフォーム他、ソフト、ハード製品で幅広い分野に取組む。2015年10月よりグーグルから社名変更。</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>META</strong></span>
+                    <span class="stock-name">メタ・プラットフォームズ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.84%</span>
+                    <span class="stock-tv">1.5兆円</span>
+                  </div>
+                  <div class="stock-industry">[双方向型メディア]</div>
+                  <div class="stock-desc">世界最大のＳＮＳサイト「フェイスブック」を運営</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>GOOG</strong></span>
+                    <span class="stock-name">アルファベット</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.78%</span>
+                    <span class="stock-tv">1.1兆円</span>
+                  </div>
+                  <div class="stock-industry">[双方向型メディア]</div>
+                  <div class="stock-desc">検索プラットフォーム他、ソフト、ハード製品で幅広い分野に取組む。2015年10月よりグーグルから社名変更。</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>NBIS</strong></span>
+                    <span class="stock-name">ネビウス・グループ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+7.58%</span>
+                    <span class="stock-tv">5020億円</span>
+                  </div>
+                  <div class="stock-industry">[双方向型メディア]</div>
+                  <div class="stock-desc">世界各地のAI開発者を対象にインフラとサービスの提供に従事するオランダの企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>SPOT</strong></span>
+                    <span class="stock-name">スポティファイ・テクノロジー</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.86%</span>
+                    <span class="stock-tv">1571億円</span>
+                  </div>
+                  <div class="stock-industry">[双方向型メディア]</div>
+                  <div class="stock-desc">音楽のストリーミング配信サービス、及び同サービスを運営する企業</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 小売</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                46銘柄 (9↑/37↓) ・ 売買代金合計 5.3兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -0.75%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -1.32%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>AMZN</strong></span>
+                    <span class="stock-name">アマゾン・ドット・コム</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.35%</span>
+                    <span class="stock-tv">1.7兆円</span>
+                  </div>
+                  <div class="stock-industry">[小売（景気循環）]</div>
+                  <div class="stock-desc">商品選別、価格、利便性に重点を置いた商品をウェブサイトを通じて消費者に提供</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>WMT</strong></span>
+                    <span class="stock-name">ウォルマート</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.72%</span>
+                    <span class="stock-tv">4931億円</span>
+                  </div>
+                  <div class="stock-industry">[小売（景気非連動）]</div>
+                  <div class="stock-desc">複数形態の小売店チェーンを展開する企業グループ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>COST</strong></span>
+                    <span class="stock-name">コストコ・ホールセール</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.13%</span>
+                    <span class="stock-tv">4177億円</span>
+                  </div>
+                  <div class="stock-industry">[小売（景気非連動）]</div>
+                  <div class="stock-desc">会員制倉庫型店舗チェーンを経営</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>HD</strong></span>
+                    <span class="stock-name">ホーム・デポ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.85%</span>
+                    <span class="stock-tv">3005億円</span>
+                  </div>
+                  <div class="stock-industry">[小売（景気循環）]</div>
+                  <div class="stock-desc">住宅リフォーム用品小売大手</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>MELI</strong></span>
+                    <span class="stock-name">メルカド・リブレ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.33%</span>
+                    <span class="stock-tv">2121億円</span>
+                  </div>
+                  <div class="stock-industry">[小売（景気循環）]</div>
+                  <div class="stock-desc">オンライン取引プラットフォームを運営</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 医療機器・サービス</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                74銘柄 (33↑/41↓) ・ 売買代金合計 5.3兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -0.65%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -0.66%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>UNH</strong></span>
+                    <span class="stock-name">ユナイテッドヘルス・グループ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.40%</span>
+                    <span class="stock-tv">3589億円</span>
+                  </div>
+                  <div class="stock-industry">[医療保険]</div>
+                  <div class="stock-desc">世界中で事業を展開する医療保険会社</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>NTRA</strong></span>
+                    <span class="stock-name">ナテラ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-14.59%</span>
+                    <span class="stock-tv">2875億円</span>
+                  </div>
+                  <div class="stock-industry">[医療診断・研究]</div>
+                  <div class="stock-desc">遺伝子疾患の管理に変化をもたらす自社の分子および生物情報学技術を持つ検査会社</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>TMO</strong></span>
+                    <span class="stock-name">サーモ・フィッシャー・サイエンティフ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+2.63%</span>
+                    <span class="stock-tv">2291億円</span>
+                  </div>
+                  <div class="stock-industry">[医療診断・研究]</div>
+                  <div class="stock-desc">分析機器、研究装置、ソフトウェア、サービス、消耗品、試薬、化学薬品、必要品を販売</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>SYK</strong></span>
+                    <span class="stock-name">ストライカー</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-2.75%</span>
+                    <span class="stock-tv">1947億円</span>
+                  </div>
+                  <div class="stock-industry">[医療機器・器械]</div>
+                  <div class="stock-desc">医療機器メーカー</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>CVS</strong></span>
+                    <span class="stock-name">CVSヘルス CVS NYSE 掲示</span>
+                    <span style="color:var(--red-text);font-weight:600;">+3.10%</span>
+                    <span class="stock-tv">1861億円</span>
+                  </div>
+                  <div class="stock-industry">[医療保険]</div>
+                  <div class="stock-desc">米国で処方箋および関連ヘルスケアサービスを提供</div>
+                </div></div>
+        </div><div class="card card-bull" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▲ 産業機械</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                49銘柄 (35↑/14↓) ・ 売買代金合計 4.6兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--red-text);font-weight:700;font-size:15px;">時価総額加重 +1.24%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 +2.19%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>GEV</strong></span>
+                    <span class="stock-name">GEベルノバ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.47%</span>
+                    <span class="stock-tv">8901億円</span>
+                  </div>
+                  <div class="stock-industry">[工業製品]</div>
+                  <div class="stock-desc">電力システムの発電・送電・貯蔵などのサービスを提供する米国の企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>BE</strong></span>
+                    <span class="stock-name">ブルーム・エネルギー</span>
+                    <span style="color:var(--red-text);font-weight:600;">+3.41%</span>
+                    <span class="stock-tv">6479億円</span>
+                  </div>
+                  <div class="stock-industry">[工業製品]</div>
+                  <div class="stock-desc">効率的で、クリーンな燃料電池発電システムを製造</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>CAT</strong></span>
+                    <span class="stock-name">キャタピラー</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.90%</span>
+                    <span class="stock-tv">4248億円</span>
+                  </div>
+                  <div class="stock-industry">[農業・建設機械]</div>
+                  <div class="stock-desc">建設・採掘機械、ディーゼル・天然ガスエンジン及びディーゼル電気機関車を製造</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>VRT</strong></span>
+                    <span class="stock-name">バーティブ・ホールディングス</span>
+                    <span style="color:var(--red-text);font-weight:600;">+3.47%</span>
+                    <span class="stock-tv">2796億円</span>
+                  </div>
+                  <div class="stock-industry">[工業製品]</div>
+                  <div class="stock-desc">データセンターなどに電力設備、冷却管理などのサービスを提供する米国の企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>ETN</strong></span>
+                    <span class="stock-name">イートン・コーポレーション</span>
+                    <span style="color:var(--red-text);font-weight:600;">+4.50%</span>
+                    <span class="stock-tv">2439億円</span>
+                  </div>
+                  <div class="stock-industry">[工業製品]</div>
+                  <div class="stock-desc">世界的な規模で事業を行う電力管理会社</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 証券・資産運用</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                52銘柄 (23↑/28↓) ・ 売買代金合計 3.7兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -0.05% <span style="font-size:11px;color:var(--text3);margin-left:4px;">(売買代金加重 <span style="color:var(--red-text)">+3.96%</span> — 大型に資金集中の兆候)</span></div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 +1.95%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>IREN</strong></span>
+                    <span class="stock-name">アイ・アー・イー・エン</span>
+                    <span style="color:var(--red-text);font-weight:600;">+20.02%</span>
+                    <span class="stock-tv">3804億円</span>
+                  </div>
+                  <div class="stock-industry">[資本市場]</div>
+                  <div class="stock-desc">主に再生可能エネルギーを利用したビットコインのマイニングのためのデータセンターと電気インフラを構築、所有、運営するオーストラリアの企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>GS</strong></span>
+                    <span class="stock-name">ゴールドマン・サックス・グループ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.36%</span>
+                    <span class="stock-tv">3428億円</span>
+                  </div>
+                  <div class="stock-industry">[資本市場]</div>
+                  <div class="stock-desc">投資銀行、証券事業、投資管理事業を行う世界的な銀行持株会社</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>HOOD</strong></span>
+                    <span class="stock-name">ロビンフッド・マーケッツ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+3.21%</span>
+                    <span class="stock-tv">2082億円</span>
+                  </div>
+                  <div class="stock-industry">[資本市場]</div>
+                  <div class="stock-desc">株式および暗号資産などの取引サービスを提供する米国の企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>WULF</strong></span>
+                    <span class="stock-name">テラウルフ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+12.80%</span>
+                    <span class="stock-tv">1790億円</span>
+                  </div>
+                  <div class="stock-industry">[資本市場]</div>
+                  
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>MS</strong></span>
+                    <span class="stock-name">モルガン・スタンレー</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.55%</span>
+                    <span class="stock-tv">1742億円</span>
+                  </div>
+                  <div class="stock-industry">[資本市場]</div>
+                  <div class="stock-desc">企業、政府機関、金融機関、個人など、幅広い顧客層に各種金融商品を提供</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 銀行・金融</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                37銘柄 (9↑/28↓) ・ 売買代金合計 3.6兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -0.38%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -0.56%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>V</strong></span>
+                    <span class="stock-name">ビザ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.01%</span>
+                    <span class="stock-tv">6150億円</span>
+                  </div>
+                  <div class="stock-industry">[クレジットカード・貸金業]</div>
+                  <div class="stock-desc">２００以上の国と地域でビジネスを展開する決済技術企業</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>JPM</strong></span>
+                    <span class="stock-name">JPモルガン・チェース</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.84%</span>
+                    <span class="stock-tv">4012億円</span>
+                  </div>
+                  <div class="stock-industry">[銀行]</div>
+                  <div class="stock-desc">世界的な金融サービス会社、銀行</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>MA</strong></span>
+                    <span class="stock-name">マスターカード</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.49%</span>
+                    <span class="stock-tv">3412億円</span>
+                  </div>
+                  <div class="stock-industry">[クレジットカード・貸金業]</div>
+                  <div class="stock-desc">クレジットカード、デビットカード、関連決済プログラムに関わる各種サービスを提供</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>BAC</strong></span>
+                    <span class="stock-name">バンク・オブ・アメリカ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.68%</span>
+                    <span class="stock-tv">2858億円</span>
+                  </div>
+                  <div class="stock-industry">[銀行]</div>
+                  <div class="stock-desc">子会社を通じて銀行およびノンバンクの金融サービスと商品を提供する持株会社</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>C</strong></span>
+                    <span class="stock-name">シティグループ</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.51%</span>
+                    <span class="stock-tv">2322億円</span>
+                  </div>
+                  <div class="stock-industry">[銀行]</div>
+                  <div class="stock-desc">消費者金融、クレジット・カード、コーポレート・バンキング、投資銀行等を提供</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 石油・ガス</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                51銘柄 (22↑/29↓) ・ 売買代金合計 3.5兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -0.38%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 +0.79%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>XOM</strong></span>
+                    <span class="stock-name">エクソンモービル・ホールディングス</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.34%</span>
+                    <span class="stock-tv">4171億円</span>
+                  </div>
+                  <div class="stock-industry">[石油・ガス]</div>
+                  <div class="stock-desc">原油・天然ガスの採掘および生産などに従事</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>CVX</strong></span>
+                    <span class="stock-name">シェブロン</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-0.15%</span>
+                    <span class="stock-tv">2676億円</span>
+                  </div>
+                  <div class="stock-industry">[石油・ガス]</div>
+                  <div class="stock-desc">石油、化学、採掘、発電およびエネルギー・サービス</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>VLO</strong></span>
+                    <span class="stock-name">バレロ・エナジー</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.36%</span>
+                    <span class="stock-tv">1837億円</span>
+                  </div>
+                  <div class="stock-industry">[石油・ガス]</div>
+                  <div class="stock-desc">石油精製・販売会社</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>COP</strong></span>
+                    <span class="stock-name">コノコフィリップス</span>
+                    <span style="color:var(--red-text);font-weight:600;">+0.60%</span>
+                    <span class="stock-tv">1658億円</span>
+                  </div>
+                  <div class="stock-industry">[石油・ガス]</div>
+                  <div class="stock-desc">世界中で天然ガス・原油の探査・開発、生産、販売を行う</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>MPC</strong></span>
+                    <span class="stock-name">マラソン・ペトロリアム</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.21%</span>
+                    <span class="stock-tv">1425億円</span>
+                  </div>
+                  <div class="stock-industry">[石油・ガス]</div>
+                  <div class="stock-desc">ガソリンおよび蒸留油を販売</div>
+                </div></div>
+        </div>
+    </div>
+    <div class="subsection">
+      <h3 class="subsection-title">🇯🇵 日本セクター資金フロー（11/6 終値）</h3>
+      <div class="sector-label" style="color:var(--text2);">売買代金ランキング TOP10（▲=加重平均+ 資金流入 ▼=加重平均- 資金流出）</div>
+      <div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 半導体</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                69銘柄 (3↑/65↓) ・ 売買代金合計 4.1兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -6.58%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -5.70%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>285A</strong></span>
+                    <span class="stock-name">キオクシアホールディングス</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-8.72%</span>
+                    <span class="stock-tv">1.4兆円</span>
+                  </div>
+                  <div class="stock-industry">[半導体メモリ、NAND型フラッシュメモリ、SSD]</div>
+                  <div class="stock-desc">半導体（メモリー）メーカー。フラッシュメモリのパイオニアとしてNAND型フラッシュメモリ、USBフラッシュメモリ、ストレージクラスメモリ、ストレージ製品のSSD、SDメモリカードの製造・販売。（旧）東芝メモリ、フラッシュメモリはサムスン電子</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6857</strong></span>
+                    <span class="stock-name">アドバンテスト</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-4.99%</span>
+                    <span class="stock-tv">1.0兆円</span>
+                  </div>
+                  <div class="stock-industry">[検査・分析機器、半導体検査装置]</div>
+                  <div class="stock-desc">半導体試験装置の大手メーカー。半導体デバイス・部品テストシステム（SoCテスタ、メモリ・テスタ）、メカトロニクス機器（テスト・ハンドラ、デバイス・インタフェース、ナノテクノロジー製品）の製造販売。半導体テスタ（SoCテスタ、メモリ・テスタ）</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8035</strong></span>
+                    <span class="stock-name">東京エレクトロン</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.60%</span>
+                    <span class="stock-tv">2845億円</span>
+                  </div>
+                  <div class="stock-industry">[半導体製造装置]</div>
+                  <div class="stock-desc">半導体製造装置の大手メーカー。CVD装置、エッチング装置、洗浄装置など微細加工プロセス向け装置を製造。世界市場で高いシェアを持ち、先端半導体製造に不可欠なプロセス技術を提供。</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6920</strong></span>
+                    <span class="stock-name">レーザーテック</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-4.56%</span>
+                    <span class="stock-tv">2242億円</span>
+                  </div>
+                  <div class="stock-industry">[半導体検査装置]</div>
+                  <div class="stock-desc">半導体検査装置メーカー。半導体検査装置（マスクブランクス製造・ウェハ製造・マスク作成・デバイス製造工程におけるフォトマスクやウェハの欠陥検査装置）、FPDフォトマスク欠陥検査装置の製造・販売。半導体用マスク検査装置の世界トップメーカー（ファ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>4062</strong></span>
+                    <span class="stock-name">イビデン</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-8.61%</span>
+                    <span class="stock-tv">1976億円</span>
+                  </div>
+                  <div class="stock-industry">[インテルサプライヤー]</div>
+                  <div class="stock-desc">電子部品メーカー。電子製品（MPU・GPU向けICパッケージ基板、マザーボード・プリント配線板）、セラミック製品（自動車排気系部品、脱硝触媒、特殊炭素製品、セラミックファイバー）、建材の製造販売。ICパッケージ用基板、ディーゼル車黒煙除去フ</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 電子部品</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                47銘柄 (1↑/45↓) ・ 売買代金合計 1.1兆円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -2.38%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -5.06%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6976</strong></span>
+                    <span class="stock-name">太陽誘電</span>
+                    <span style="color:var(--red-text);font-weight:600;">+1.43%</span>
+                    <span class="stock-tv">2856億円</span>
+                  </div>
+                  <div class="stock-industry">[コンデンサー]</div>
+                  <div class="stock-desc">電子部品メーカー。積層セラミックコンデンサを中核に、フェライト製品・応用製品（インダクタ、ノイズ対策部品）、複合デバイス（通信用デバイス/FBAR・SAW、回路モジュール）等の電子部品の製造・販売。主力製品は粉体微細化技術を基盤に誘電体セラ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6981</strong></span>
+                    <span class="stock-name">村田製作所</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-2.98%</span>
+                    <span class="stock-tv">2127億円</span>
+                  </div>
+                  <div class="stock-industry">[電子機器・部品大手、コンデンサー]</div>
+                  <div class="stock-desc">大手電子部品メーカー。ファンクショナルセラミックスをベースにコンポーネント（コンデンサ 、インダクタ・EMIフィルタ）、モジュール（高周波・通信、リチウムイオン二次電池）、センサの製造・販売。通信、モビリティ、家電、産業、環境、ウェルネス領</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6758</strong></span>
+                    <span class="stock-name">ソニーグループ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-1.64%</span>
+                    <span class="stock-tv">2009億円</span>
+                  </div>
+                  <div class="stock-industry">[家電メーカー]</div>
+                  <div class="stock-desc">世界的なエレクトロニクス＆エンタメ企業。エレクトロニクス（半導体・電子デバイス、モバイル、家電・音響・カメラ）、エンターテインメント（家庭用ゲーム機、ゲームソフト、映画、音楽）分野でグローバル展開。ゲーム＆ネットワークサービス、音楽、映画、</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6752</strong></span>
+                    <span class="stock-name">パナソニックホールディングス</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.05%</span>
+                    <span class="stock-tv">884億円</span>
+                  </div>
+                  <div class="stock-industry">[家電メーカー]</div>
+                  <div class="stock-desc">国内トップの総合エレクトロニクスメーカー。個人向け電化製品・電気機械器具・住宅関連から、産業向け電子デバイス・電子材料、FA機器・情報通信機器、車載電池・蓄電システムに至る製品の開発・生産・販売。くらし、コネクト、インダストリー、エナジーの</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6861</strong></span>
+                    <span class="stock-name">キーエンス</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-3.65%</span>
+                    <span class="stock-tv">756億円</span>
+                  </div>
+                  <div class="stock-industry">[センサー]</div>
+                  <div class="stock-desc">世界的なFAセンサ・制御機器メーカー（ファブレス）。生産現場の生産性・品質・安全性向上や工程改善・自動化のための各種センサ、制御・計測、画像処理、解析・光学機器、ビジネス情報機器の製造・販売。主力の産業用センサや画像処理システム、測定器、セ</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 自動車</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                57銘柄 (0↑/57↓) ・ 売買代金合計 7052億円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -5.49%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -5.21%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7203</strong></span>
+                    <span class="stock-name">トヨタ自動車</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.52%</span>
+                    <span class="stock-tv">2254億円</span>
+                  </div>
+                  <div class="stock-industry">[大手自動車]</div>
+                  <div class="stock-desc">世界トップのモビリティカンパニー（世界トップの販売台数）。トヨタグループの中核として自動車産業を牽引、現地生産を基盤にコンパクト・セダン・SUV・スポーツ・ワゴン・商用車・トラック等の製造・販売。世界No1の自動車グループ（デンソー・豊田自</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>5802</strong></span>
+                    <span class="stock-name">住友電気工業</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-4.96%</span>
+                    <span class="stock-tv">645億円</span>
+                  </div>
+                  <div class="stock-industry">[電線・ケーブル]</div>
+                  <div class="stock-desc">国内最大手の非鉄金属メーカー。自動車（ワイヤーハーネス、電装部品）、情報通信（光・通信ケーブル、電子デバイス）、エレクトロニクス（電子ワイヤー、FPC）、環境・エネルギー（電線）、産業素材の5事業。「モビリティ」「エネルギー」「コミュニケー</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7267</strong></span>
+                    <span class="stock-name">本田技研工業</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.69%</span>
+                    <span class="stock-tv">404億円</span>
+                  </div>
+                  <div class="stock-industry">[大手自動車、二輪車メーカー]</div>
+                  <div class="stock-desc">国際的な自動車メーカー、自動車世界9位・オートバイ世界1位。世界各地の生産・販売ネットワークにより四輪車・二輪車のグローバル供給を中核に、船外機・小型ジェット機・パワープロダクツなど多角的な事業展開。主要車種は「N BOX」「シビック」「ヴ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6902</strong></span>
+                    <span class="stock-name">デンソー</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-3.40%</span>
+                    <span class="stock-tv">360億円</span>
+                  </div>
+                  <div class="stock-industry">[自動車部品(トヨタ系)]</div>
+                  <div class="stock-desc">世界2位の大手自動車部品サプライヤー、トヨタグループ。世界を代表する自動車市場メーカーを顧客にパワートレイン機器、エレクトリフィケーション、モビリティエレクトロニクス、サーマルシステムを供給。社員15万人以上、売上7兆円超、世界35の国・地</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7272</strong></span>
+                    <span class="stock-name">ヤマハ発動機</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-9.35%</span>
+                    <span class="stock-tv">302億円</span>
+                  </div>
+                  <div class="stock-industry">[二輪車メーカー]</div>
+                  <div class="stock-desc">二輪車メーカー。ランドモビリティ製品（二輪車、四輪バギー、スノーモビル、電動アシスト自転車）を中心に、マリン製品（ウォータービークル、船外機、ボート、エンジン）、ロボティクス製品の製造・販売。主力製品はバイク・スクーター（ロードスポーツ、オ</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 銀行・金融</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                74銘柄 (1↑/73↓) ・ 売買代金合計 6636億円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -6.41%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -7.12%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8306</strong></span>
+                    <span class="stock-name">三菱UFJフィナンシャル・グループ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-6.52%</span>
+                    <span class="stock-tv">1816億円</span>
+                  </div>
+                  <div class="stock-industry">[大手銀行]</div>
+                  <div class="stock-desc">三菱UFJ銀行、三菱UFJ信託銀行を中核とする国内最大の金融グループ。銀行業務、信託銀行業務、証券業務を中心に、クレジットカード・貸金業務、リース業務、資産運用・投資運用業務等を展開。リテール・デジタル、法人・ウェルスマネジメント、コーポレ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8411</strong></span>
+                    <span class="stock-name">みずほフィナンシャルグループ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-7.00%</span>
+                    <span class="stock-tv">1130億円</span>
+                  </div>
+                  <div class="stock-industry">[大手銀行]</div>
+                  <div class="stock-desc">日本を代表する大手金融グループ。銀行業務、信託業務、証券業務を中核に、シンクタンク、アセットマネジメント、リース、コンサルティング等の金融サービスをカンパニー制に基づきグローバル事業展開。カンパニー（リテール・事業法人、コーポレート＆インベ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8316</strong></span>
+                    <span class="stock-name">三井住友フィナンシャルグループ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.73%</span>
+                    <span class="stock-tv">1013億円</span>
+                  </div>
+                  <div class="stock-industry">[大手銀行]</div>
+                  <div class="stock-desc">三井住友銀行を中核とする大手金融（SMBC）グループ。銀行業務を中心に、リース業務、証券業務、コンシューマーファイナンス業務、資産運用業務、システム開発・情報処理業務などの金融サービスを展開。リテール事業、ホールセール事業、グローバル事業、</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8308</strong></span>
+                    <span class="stock-name">りそなホールディングス</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-6.21%</span>
+                    <span class="stock-tv">308億円</span>
+                  </div>
+                  <div class="stock-industry">[大手銀行]</div>
+                  <div class="stock-desc">りそな銀行を中核に、埼玉りそな銀行、関西みらい銀行、みなと銀行から構成される金融グループ。銀行・信託業務のほか、クレジットカード・VC・ファクタリング・信用保証・投資運用業務等の金融サービス。旧銀行（大和銀行、近畿大阪銀行、奈良銀行、あさひ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7182</strong></span>
+                    <span class="stock-name">ゆうちょ銀行</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.65%</span>
+                    <span class="stock-tv">271億円</span>
+                  </div>
+                  <div class="stock-industry">[大手銀行]</div>
+                  <div class="stock-desc">日本郵政グループの銀行子会社。総資産国内4位の大手銀行、預金（貯金）は国内2位（174兆円）、窓口業務は日本郵便（全国2万3千カ所）への委託と直営店（235店舗）、運用は有価証券（国債・外債）が主。貯金業務（預入限度額内、1.2億口座）、A</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ ハードウェア・電子機器</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                27銘柄 (1↑/25↓) ・ 売買代金合計 6431億円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -5.03%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -5.67%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6981</strong></span>
+                    <span class="stock-name">村田製作所</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-2.98%</span>
+                    <span class="stock-tv">2127億円</span>
+                  </div>
+                  <div class="stock-industry">[電子機器・部品大手、コンデンサー]</div>
+                  <div class="stock-desc">大手電子部品メーカー。ファンクショナルセラミックスをベースにコンポーネント（コンデンサ 、インダクタ・EMIフィルタ）、モジュール（高周波・通信、リチウムイオン二次電池）、センサの製造・販売。通信、モビリティ、家電、産業、環境、ウェルネス領</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6501</strong></span>
+                    <span class="stock-name">日立製作所</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-4.82%</span>
+                    <span class="stock-tv">898億円</span>
+                  </div>
+                  <div class="stock-industry">[総合電機、家電メーカー、原子力]</div>
+                  <div class="stock-desc">日本最大クラスのデジタル＆電機・重電メーカー。各業界の有力上場企業を傘下に抱えるコングロマリットからIT・エネルギー・社会インフラを中心とした事業体へとグループ事業再編。ITで高度化された社会インフラ「社会イノベーション」・IoTサービスの</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6503</strong></span>
+                    <span class="stock-name">三菱電機</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.35%</span>
+                    <span class="stock-tv">648億円</span>
+                  </div>
+                  <div class="stock-industry">[総合電機]</div>
+                  <div class="stock-desc">大手総合電機メーカー。三菱グループ/電機分野の中核企業として重電システムから産業メカトロニクス、防衛電子機器、人工衛星、情報通信システム、電子デバイス、家庭電器まで電機・電子機器を供給。インフラ（社会・電力・防衛・宇宙システム）、インダスト</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6723</strong></span>
+                    <span class="stock-name">ルネサスエレクトロニクス</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.74%</span>
+                    <span class="stock-tv">601億円</span>
+                  </div>
+                  <div class="stock-industry">[電子機器・部品大手]</div>
+                  <div class="stock-desc">国内最大手の半導体メーカー。自動車＆産業・インフラ・IoT分野におけるメモリ・マイコン・ロジックIC・SoC・パワーデバイス・センサ・アナログ製品の製造販売と半導体ソリューション提供。NEC・日立製作所・三菱電機の3社の半導体事業が統合設立</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6701</strong></span>
+                    <span class="stock-name">日本電気</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-8.58%</span>
+                    <span class="stock-tv">446億円</span>
+                  </div>
+                  <div class="stock-industry">[サーバー・汎用機、電話通信機器]</div>
+                  <div class="stock-desc">日本を代表するICT総合企業。ITとネットワーク（AI・ビッグデータ・DX・クラウド・SDN・パブリックセーフティ）を基盤に、社会・公共・企業・産業システムとテクノロジーにより社会ビジネスを牽引。ITサービス（SI、アウトソーシング・クラウ</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 産業機械</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                79銘柄 (1↑/78↓) ・ 売買代金合計 5747億円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -5.34%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -5.67%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6954</strong></span>
+                    <span class="stock-name">ファナック</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-6.03%</span>
+                    <span class="stock-tv">827億円</span>
+                  </div>
+                  <div class="stock-industry">[工作機械、産業用ロボット]</div>
+                  <div class="stock-desc">世界最大手のFA総合メーカー。FA（工作機械用CNC制御装置、サーボモータ、レーザ）、産業用ロボット、ロボマシン（ロボドリル、ロボショット、ロボカット）、IoT自動化システム（監視・管理）を供給。グローバル企業として世界に260以上のサービ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6367</strong></span>
+                    <span class="stock-name">ダイキン工業</span>
+                    <span style="color:var(--red-text);font-weight:600;">+1.51%</span>
+                    <span class="stock-tv">771億円</span>
+                  </div>
+                  <div class="stock-industry">[空調機械]</div>
+                  <div class="stock-desc">空調機・フッ素化学製品のグローバル企業。業務用・家庭用エアコン、空気清浄機、冷凍機、フィルター、化学製品（フッ素樹脂・ゴム、冷媒、化成品）、油圧機器、特機（防衛省向け）の製造・販売。国内はインバータ技術の業務用エアコン1位・家庭用エアコン2</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6273</strong></span>
+                    <span class="stock-name">SMC</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-6.49%</span>
+                    <span class="stock-tv">383億円</span>
+                  </div>
+                  <div class="stock-industry">[空気圧機械]</div>
+                  <div class="stock-desc">世界トップの空気圧制御機器メーカー。生産設備FA化の要素機器である空気圧制御システムに対応した自動制御機器（圧縮空気清浄化機器、空気圧補助機器、方向制御機器、駆動機器、温調機器、センサー）の製造販売。空気圧機器を代表とする自動制御機器は半導</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6301</strong></span>
+                    <span class="stock-name">小松製作所</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-7.47%</span>
+                    <span class="stock-tv">354億円</span>
+                  </div>
+                  <div class="stock-industry">[建設機械]</div>
+                  <div class="stock-desc">世界2位の総合建設機械メーカー。油圧ショベル・ホイールローダー・ブルドーザ・ダンプトラック等の建設機械・車両（掘削機械、積込機械、整地・路盤用機械、運搬機械、解体機）、鉱山機械の製造・販売。その他、林業機械、地下建機（掘削機）、環境リサイク</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>6506</strong></span>
+                    <span class="stock-name">安川電機</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-8.38%</span>
+                    <span class="stock-tv">263億円</span>
+                  </div>
+                  <div class="stock-industry">[産業用ロボット、産業電気・電子機器]</div>
+                  <div class="stock-desc">日本を代表する産業用ロボット・メカトロニクス製品メーカー。モーション制御・ロボット技術・パワー変換技術をコアに産業の電動化・自動化機器（サーボモータ、産業用ロボット、インバータ）をグローバルに供給。産業用ロボット、ACサーボモータ・インバー</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 運輸・物流</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                60銘柄 (0↑/59↓) ・ 売買代金合計 4418億円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -5.35%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -5.16%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7013</strong></span>
+                    <span class="stock-name">IHI</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.62%</span>
+                    <span class="stock-tv">482億円</span>
+                  </div>
+                  <div class="stock-industry">[総合重機、造船、原子力]</div>
+                  <div class="stock-desc">総合重工業メーカー、（旧）石川島播磨重工業。航空機エンジン・ロケットシステム、LNGタンク・タービン、原子力機器、プラント基盤、海洋開発、舶用機械、産業システム、防衛機器システムの製造・販売。資源・エネルギー・環境、社会基盤（橋梁・水門、都</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7012</strong></span>
+                    <span class="stock-name">川崎重工業</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.53%</span>
+                    <span class="stock-tv">406億円</span>
+                  </div>
+                  <div class="stock-industry">[総合重機、造船]</div>
+                  <div class="stock-desc">陸・海・空の輸送機器・システムの大手重工業メーカー。航空宇宙システム、エネルギーソリューション＆マリン、車両、精密機械・ロボット、パワースポーツ＆エンジンの各カンパニー製品の製造販売。総合エンジニアリング企業として陸・海・空のシステム（航空</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>9104</strong></span>
+                    <span class="stock-name">商船三井</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-6.59%</span>
+                    <span class="stock-tv">333億円</span>
+                  </div>
+                  <div class="stock-industry">[海運（コンテナ・ばら積み船）]</div>
+                  <div class="stock-desc">日本最大級の海運会社。コンテナ船、ばら積み船、タンカーなどを運航し、国際海上輸送サービスを提供。LNG運搬船のオペレーション事業も展開。グローバルネットワークと多様な船舶保有により、海上物流インフラの中核を担う。</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>9101</strong></span>
+                    <span class="stock-name">日本郵船</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.73%</span>
+                    <span class="stock-tv">332億円</span>
+                  </div>
+                  <div class="stock-industry">[海運（コンテナ・バルク）]</div>
+                  <div class="stock-desc">世界有数の総合海運企業。コンテナ船、バルク船（鉱石・穀物運搬船）、LNG運搬船などを保有・運航。国際海上輸送市場で大きなシェアを占め、グローバル貿易を支える基幹企業。</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>9107</strong></span>
+                    <span class="stock-name">川崎汽船</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.86%</span>
+                    <span class="stock-tv">208億円</span>
+                  </div>
+                  <div class="stock-industry">[外航海運]</div>
+                  <div class="stock-desc">コンテナ船、バルク船、自動車運搬船などを保有する日本大手外航海運企業。国際海上輸送を主力事業とし、世界規模のネットワークで貨物輸送サービスを展開。日本郵船、商船三井と並ぶ業界大手。</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ コングロマリット</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                7銘柄 (0↑/7↓) ・ 売買代金合計 4280億円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -5.85%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -6.56%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7011</strong></span>
+                    <span class="stock-name">三菱重工業</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-4.57%</span>
+                    <span class="stock-tv">2363億円</span>
+                  </div>
+                  <div class="stock-industry">[総合重機、造船、原子力]</div>
+                  <div class="stock-desc">日本を代表する総合重工業の最大手。エネルギー・交通・プラントの社会基盤インフラから産業機械・物流機器、船舶海洋・航空機器、防衛・宇宙開発システムに至る分野で日本の技術と産業を率先。船舶・海洋、原動機、機械・鉄構、航空・宇宙など総合重機の最大</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8031</strong></span>
+                    <span class="stock-name">三井物産</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-8.32%</span>
+                    <span class="stock-tv">708億円</span>
+                  </div>
+                  <div class="stock-industry">[総合商社]</div>
+                  <div class="stock-desc">総合大手商社、売上高3位の日本を代表する商社。トレーディングと事業経営・事業開発を両輪に金属資源、エネルギー、機械・インフラ、化学品、鉄鋼製品、生活産業、次世代・機能推進の7事業でグローバル展開。62ヶ国・122拠点でマーケティング、ロジス</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8001</strong></span>
+                    <span class="stock-name">伊藤忠商事</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-6.45%</span>
+                    <span class="stock-tv">599億円</span>
+                  </div>
+                  <div class="stock-industry">[総合商社]</div>
+                  <div class="stock-desc">大手総合商社、売上高2位。繊維、機械、金属、エネルギー・化学品、食料、住生活、情報・金融、第8の8カンパニー制により原料等の川上から小売の川下まで包括的にカバーするコングロマリット。繊維（アパレル、ブランドマーケティング、繊維資材・ライフス</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8002</strong></span>
+                    <span class="stock-name">丸紅</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-7.48%</span>
+                    <span class="stock-tv">443億円</span>
+                  </div>
+                  <div class="stock-industry">[総合商社]</div>
+                  <div class="stock-desc">大手総合商社、総資産5位。生活産業（ライフスタイル、情報、アグリ）、素材産業（化学品、金属）、エナジー・インフラ（エネルギー）、社会産業・金融（航空・船舶、不動産、建機・産機、モビリティ）の事業。世界126拠点でグローバルなビジネスを展開。</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7003</strong></span>
+                    <span class="stock-name">三井E＆S</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-7.45%</span>
+                    <span class="stock-tv">71億円</span>
+                  </div>
+                  <div class="stock-industry">[総合重機、造船]</div>
+                  <div class="stock-desc">海洋エンジニアリング会社、（旧）三井造船。成長事業推進（脱炭素関連、産業機械、メカトロ）、舶用推進システム（舶用エンジン）、物流システム（クレーン）、周辺サービス（エンジニアリング）を提供。マリン領域である海上輸送システム（大形舶用低速2サ</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ 証券・資産運用</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                24銘柄 (1↑/22↓) ・ 売買代金合計 3861億円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -9.19%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -4.92%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>9984</strong></span>
+                    <span class="stock-name">ソフトバンクグループ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-10.83%</span>
+                    <span class="stock-tv">2628億円</span>
+                  </div>
+                  <div class="stock-industry">[投資]</div>
+                  <div class="stock-desc">世界を代表するIT投資会社。情報革命（AI革命）の資本家として、NAV（時価純資産）を価値尺度に世界の有力企業（AI、モバイルインターネット、半導体、通信）に投資、グローバルな技術革新を牽引。ソフトバンク・ビジョン・ファンド事業（ユニコーン</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8604</strong></span>
+                    <span class="stock-name">野村ホールディングス</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-8.17%</span>
+                    <span class="stock-tv">229億円</span>
+                  </div>
+                  <div class="stock-industry">[証券]</div>
+                  <div class="stock-desc">国内証券最大手の野村証券を中核とする投資銀行・証券持株会社。世界の主要な金融・資本市場で証券業を中核とする投資・金融サービスの提供、個人・機関投資家・法人顧客の資金調達・資産運用を総合的に支援。アジアに立脚したグローバル金融サービス・グルー</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>4307</strong></span>
+                    <span class="stock-name">野村総合研究所</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-6.88%</span>
+                    <span class="stock-tv">213億円</span>
+                  </div>
+                  <div class="stock-industry">[大手Sier、金融・証券システム]</div>
+                  <div class="stock-desc">国内有数の経済総合シンクタンク＆大手SI会社、通称NRI。コンサルティング（経営・戦略、政策提言、業務改革、CIT、BIT）、金融IT・産業IT（流通・製造）ソリューション、IT基盤サービスを提供。未来創発企業を標榜、業務ノウハウ・大規模シ</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8473</strong></span>
+                    <span class="stock-name">SBIホールディングス</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-4.87%</span>
+                    <span class="stock-tv">184億円</span>
+                  </div>
+                  <div class="stock-industry">[ネット証券、投資、ネット投資]</div>
+                  <div class="stock-desc">総合金融サービスグループ、ネット証券最大手。オンライン証券・銀行・保険の金融サービスをコアビジネスに資産運用・投資・暗号資産へと金融テクノロジーの融合による金融商品サービスを提供。金融サービス（証券・銀行・保険・住宅ローン・PTS/私設取引</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>8601</strong></span>
+                    <span class="stock-name">大和証券グループ本社</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-7.87%</span>
+                    <span class="stock-tv">135億円</span>
+                  </div>
+                  <div class="stock-industry">[証券]</div>
+                  <div class="stock-desc">国内2位、アジア有数の総合証券会社。資産管理・運用を中核とするウェルスマネジメント（証券）、アセット・マネジメント（運用、不動産）、グローバル・マーケッツ＆インベストメント・バンキング事業を営む。有価証券・デリバティブ商品の売買と委託の媒介</div>
+                </div></div>
+        </div><div class="card card-bear" style="padding:14px 18px;margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:16px;font-weight:600;">▼ アパレル・繊維</span>
+              <span style="font-size:12px;color:var(--text3);margin-left:8px;">
+                24銘柄 (3↑/21↓) ・ 売買代金合計 3520億円
+              </span>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--blue-text);font-weight:700;font-size:15px;">時価総額加重 -3.31%</div>
+              <div style="color:var(--text3);font-size:11px;">単純平均 -4.57%</div>
+            </div>
+          </div>
+          <div class="stock-details"><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>9983</strong></span>
+                    <span class="stock-name">ファーストリテイリング</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-3.79%</span>
+                    <span class="stock-tv">2357億円</span>
+                  </div>
+                  <div class="stock-industry">[メンズ、カジュアル、アパレル大手]</div>
+                  <div class="stock-desc">世界的なアパレル小売企業。少品種・大量生産を武器に旗艦ブランド＆LifeWear店舗「ユニクロ」を中心に、低価格「ジーユー」、グローバルブランド「セオリー」「プラステ」等を傘下とする企業グループ。国内衣料品販売1位、世界アパレル製造小売3位</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>3110</strong></span>
+                    <span class="stock-name">日東紡績</span>
+                    <span style="color:var(--red-text);font-weight:600;">+3.38%</span>
+                    <span class="stock-tv">389億円</span>
+                  </div>
+                  <div class="stock-industry">[ガラス]</div>
+                  <div class="stock-desc">化学繊維メーカー。グラスファイバーの原繊材（ガラス繊維/ヤーン、ロービング）・機能材（スペシャルガラス）・設備材（産業資材用製品）、メディカル（体外診断用医薬品）、繊維（芯地製品）の製造・販売。電子材料、メディカル、複合材、資材・ケミカル、</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>7936</strong></span>
+                    <span class="stock-name">アシックス</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.98%</span>
+                    <span class="stock-tv">261億円</span>
+                  </div>
+                  <div class="stock-industry">[スポーツウエア・用品]</div>
+                  <div class="stock-desc">グローバル・スポーツ用品メーカー、スポーツシューズの国内最大手。「アシックス」ブランドのスポーツ用品（ランニング・競技用シューズ、スニーカー、ウエア、ワーキングシューズ、スポーツ用具類）の製造販売。パフォーマンスランニング（ランニングシュー</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>3402</strong></span>
+                    <span class="stock-name">東レ</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-3.07%</span>
+                    <span class="stock-tv">110億円</span>
+                  </div>
+                  <div class="stock-industry">[繊維大手]</div>
+                  <div class="stock-desc">基礎素材・先端材料メーカー。有機合成化学・高分子化学・バイオテクノロジー・ナノテクノロジーをコア技術に、ファッションから航空・宇宙用途に至る繊維・樹脂の化学製品や先端素材・電子材料を供給。繊維（ナイロン、ポリエステル、アクリル、原糸・原綿、</div>
+                </div><div class="stock-detail">
+                  <div class="stock-detail-head">
+                    <span class="stock-code"><strong>3092</strong></span>
+                    <span class="stock-name">ZOZO</span>
+                    <span style="color:var(--blue-text);font-weight:600;">-5.96%</span>
+                    <span class="stock-tv">45億円</span>
+                  </div>
+                  <div class="stock-industry">[ネット小売、カジュアル]</div>
+                  <div class="stock-desc">日本最大級のファッション通販サイト運営、（旧）スタートトゥデイ。ZOZOTOWN事業（受託ショップとして掲載各社ブランドのショップ受託運営・受託販売、買取ショップとして中古商材の買取・販売）が中核。主要サービスは「ZOZOTOWN」（出店者</div>
+                </div></div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">⭐ 注目銘柄 TOP10（銘柄深掘り分析付き）</h2>
+    <p class="section-meta">スコア=活況度25% × テクニカル25% × テーマ強度25% × ファンダメンタル25%（各カテゴリ0〜100点の加重平均）／ テーマ強度に<strong>米国-日本 個別銘柄ペア相関(過去90日 ラグ+1)</strong>を組込み／ 深掘り分析: Opus 4 教科書12章フレームワーク</p>
+    <div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">1</span>
+        <span class="catalyst-code">6857</span>
+        <span class="catalyst-name">アドバンテスト</span>
+        <span class="badge badge-neutral">検査・分析機器、半導体検査装置</span>
+        <span class="stock-score">スコア <strong>63.5</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥28,015 <span style="color:var(--blue-text);">(-4.99%)</span> ・
+          出来高率 5.05% ・ 売買代金 1.0兆円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>34.6</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥32,540(-13.9%) / 25日¥35,957(-22.1%) / 75日¥33,691(-16.8%)</span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>27.3</strong> / PBR <strong>17.66</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>米国連動 + industry_map + DB検索 ／ テーマ: 半導体試験装置 (関連: peer:NVDA)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>WULF</strong> <span style="color:var(--red-text);">(+12.8%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.39</span> ・ <strong>AMD</strong> <span style="color:var(--red-text);">(+11.0%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.44</span> ・ <strong>COHR</strong> <span style="color:var(--red-text);">(+13.6%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.31</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +37.14</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 100 / テクニカル 15 / テーマ 91 / ファンダ 48</span></div>
+        
+        <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">買い材料</span>
+          <span>AI半導体向けSoC/HBMテスト需要の急拡大を背景に、通期売上1.13兆円・営業利益率44.2%と高収益を達成。直近四半期EPS515.1円は前年340.6円から大幅増で、生成AIチップのテスト工程増加が収益を牽引している。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">リスク</span>
+          <span>売上が特定AI半導体顧客の設備投資サイクルに依存し、顧客の投資ペース調整や在庫調整が起きれば受注が急減速するリスク。テスト装置は景気感応度が高く、半導体市況の反転局面では利益変動が大きい。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">業績ドライバー</span>
+          <span>AI向けSoC・HBMテストシステムの高稼働と先端チップ複雑化によるテスト時間増加が継続的に装置需要を押し上げる。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">決算またぎ</span>
+          <span><span class="badge badge-bull">hold</span> AI半導体のテスト需要拡大で直近四半期EPSが前年同期比大幅増と業績モメンタムが明確に継続。SoC/HBM向けの先端テスト需要は次四半期も剥落する兆候が見られず、積み上がり証跡が強い。</span>
+        </div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">2</span>
+        <span class="catalyst-code">285A</span>
+        <span class="catalyst-name">キオクシア</span>
+        <span class="badge badge-neutral">半導体メモリ、NAND型フラッシュメモリ、SSD</span>
+        <span class="stock-score">スコア <strong>62.0</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥8,511 <span style="color:var(--blue-text);">(-8.72%)</span> ・
+          出来高率 10.31% ・ 売買代金 1.4兆円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>21.7</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥10,677(-20.3%) / 25日¥14,347(-40.7%) / 75日¥39,003(-78.2%) <span class="badge badge-bear">パーフェクトベア ↘</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PBR <strong>4.64</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>米国連動 + industry_map ／ テーマ: 半導体メモリ (関連: peer:SNDK)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>LRCX</strong> <span style="color:var(--red-text);">(+8.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.41</span> ・ <strong>MCHP</strong> <span style="color:var(--blue-text);">(-10.0%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.31</span> ・ <strong>NBIS</strong> <span style="color:var(--red-text);">(+7.6%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.24</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +3.69</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 120 / テクニカル 15 / テーマ 65 / ファンダ 48</span></div>
+        
+        <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">買い材料</span>
+          <span>NANDフラッシュメモリの需給改善とAI向けデータセンター需要でビット単価が上昇し、営業利益率37.2%と高水準を達成。SSDの高容量品シフトが収益性を押し上げ、売上高は過去最高圏で推移している。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">リスク</span>
+          <span>メモリ市況は在庫調整とビット単価下落のサイクル性が強く、直近EPSが1024円から1539円へ変動する一方で過去に271円へ急落した実績があり、需給反転時にマージンが急速に悪化する構造を抱える。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">業績ドライバー</span>
+          <span>AIサーバー・データセンター向け高容量NANDとエンタープライズSSD需要の拡大、およびビット単価上昇による採算改善が次四半期業績に乗る。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">決算またぎ</span>
+          <span><span class="badge badge-bull">hold</span> 直近決算でEPSが1024円から1539円へ改善し業績モメンタムは上向き、AI向けメモリ需要が牽引役として機能している。ただしメモリ市況のサイクル性が高く、ビット単価の反転次第で利益が大きく振れる点が確信度を抑える要因。</span>
+        </div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">3</span>
+        <span class="catalyst-code">6920</span>
+        <span class="catalyst-name">レーザーテック</span>
+        <span class="badge badge-neutral">半導体検査装置</span>
+        <span class="stock-score">スコア <strong>61.5</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥32,040 <span style="color:var(--blue-text);">(-4.56%)</span> ・
+          出来高率 7.63% ・ 売買代金 2242億円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>35.0</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥36,632(-12.5%) / 25日¥41,410(-22.6%) / 75日¥39,149(-18.2%)</span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>31.9</strong> / PBR <strong>12.00</strong> / 配当利回り <strong>1.10%</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>industry_map + DB検索 ／ テーマ: 半導体検査装置 (関連: 半導体)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>LRCX</strong> <span style="color:var(--red-text);">(+8.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.40</span> ・ <strong>RIOT</strong> <span style="color:var(--red-text);">(+13.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.24</span> ・ <strong>VST</strong> <span style="color:var(--red-text);">(+10.6%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.30</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +26.58</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 97 / テクニカル 15 / テーマ 85 / ファンダ 49</span></div>
+        
+        <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">買い材料</span>
+          <span>EUVマスク欠陥検査装置で世界シェアを独占し、営業利益率45.7%・ROE33.9%と極めて高い収益性を維持。先端半導体の微細化進展でEUV世代の検査需要が構造的に拡大し、数年で売上が4倍超に急伸してきた。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">リスク</span>
+          <span>売上の大半を少数の先端ロジック・メモリメーカーの設備投資に依存し、顧客の投資抑制や計画延期が業績を直撃する。直近は前年の251億から230億へ減収しており、半導体投資サイクルの端境期で受注変動リスクが大きい。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">業績ドライバー</span>
+          <span>EUVおよびActinic検査装置の受注残が次四半期以降の売上に転換し、先端メモリ各社のHBM・EUV投資再開が需要を押し上げる。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">決算またぎ</span>
+          <span><span class="badge badge-bull">hold</span> EUV検査装置の独占的ポジションと受注残を背景に高収益を維持しているが、直近売上が前年比で減収に転じており、顧客の設備投資タイミング次第で四半期業績が振れやすい。受注動向の具体的回復確認が次の鍵となる。</span>
+        </div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">4</span>
+        <span class="catalyst-code">8035</span>
+        <span class="catalyst-name">東京エレクトロン</span>
+        <span class="badge badge-neutral">半導体製造装置</span>
+        <span class="stock-score">スコア <strong>60.5</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥8,263 <span style="color:var(--blue-text);">(-5.60%)</span> ・
+          出来高率 1.50% ・ 売買代金 2845億円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>19.3</strong> <span style='color:var(--blue-text);'>売られすぎ</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥9,240(-10.6%) / 25日¥10,609(-22.1%) / 75日¥39,954(-79.3%) <span class="badge badge-bear">パーフェクトベア ↘</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>21.7</strong> / PBR <strong>8.63</strong> / 配当利回り <strong>2.31%</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>industry_map + DB検索 ／ テーマ: 半導体製造装置 (関連: 半導体)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>LRCX</strong> <span style="color:var(--red-text);">(+8.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.45</span> ・ <strong>WULF</strong> <span style="color:var(--red-text);">(+12.8%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.29</span> ・ <strong>RIOT</strong> <span style="color:var(--red-text);">(+13.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.23</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +24.77</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 87 / テクニカル 15 / テーマ 85 / ファンダ 55</span></div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">5</span>
+        <span class="catalyst-code">6407</span>
+        <span class="catalyst-name">ＣＫＤ</span>
+        <span class="badge badge-neutral">その他産業機械、半導体製造装置</span>
+        <span class="stock-score">スコア <strong>59.8</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥3,627 <span style="color:var(--blue-text);">(-7.90%)</span> ・
+          出来高率 4.08% ・ 売買代金 99億円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>25.1</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥4,280(-15.3%) / 25日¥5,009(-27.6%) / 75日¥5,465(-33.6%) <span class="badge badge-bear">パーフェクトベア ↘</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>12.8</strong> / PBR <strong>1.51</strong> / 配当利回り <strong>3.09%</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>DB検索 ／ テーマ: FA機器 (関連: 半導体)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>RIOT</strong> <span style="color:var(--red-text);">(+13.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.32</span> ・ <strong>NRG</strong> <span style="color:var(--red-text);">(+9.6%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.39</span> ・ <strong>LRCX</strong> <span style="color:var(--red-text);">(+8.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.44</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +30.84</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 85 / テクニカル 15 / テーマ 79 / ファンダ 60</span></div>
+        
+        <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">買い材料</span>
+          <span>空気圧制御機器など機能機器事業に加え、半導体製造装置向けの自動機械装置が需要回復を牽引。営業利益率12.4%、自己資本比率67.7%と財務基盤が強固で、売上157,886億円へ回復基調にある。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">リスク</span>
+          <span>半導体製造装置向けは設備投資サイクルに連動し、顧客の投資抑制局面では受注が大きく振れる。中国など海外需要の鈍化や工作機械・自動車関連の設備投資減速が機器部門の伸びを圧迫するリスクがある。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">業績ドライバー</span>
+          <span>半導体・電子部品向け設備投資の回復と自動機械装置の受注増が次四半期以降の売上に乗ってくる見込み。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">決算またぎ</span>
+          <span><span class="badge badge-bull">hold</span> 売上が155,634→157,886億円と回復基調にあり、半導体関連需要の持ち直しが機器・装置部門を下支え。財務健全性スコア93と基盤は盤石だが、設備投資サイクル依存で四半期ブレが大きく確信度は中位に留める。</span>
+        </div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">6</span>
+        <span class="catalyst-code">7735</span>
+        <span class="catalyst-name">SCREENホールディングス</span>
+        <span class="badge badge-neutral">半導体製造装置</span>
+        <span class="stock-score">スコア <strong>59.5</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥7,778 <span style="color:var(--red-text);">(+0.19%)</span> ・
+          出来高率 4.48% ・ 売買代金 646億円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>21.4</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥9,017(-13.7%) / 25日¥12,952(-39.9%) / 75日¥13,474(-42.3%) <span class="badge badge-bear">パーフェクトベア ↘</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>12.8</strong> / PBR <strong>2.82</strong> / 配当利回り <strong>2.35%</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>industry_map + DB検索 ／ テーマ: 半導体製造装置 (関連: 半導体)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>WULF</strong> <span style="color:var(--red-text);">(+12.8%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.38</span> ・ <strong>RIOT</strong> <span style="color:var(--red-text);">(+13.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.34</span> ・ <strong>NRG</strong> <span style="color:var(--red-text);">(+9.6%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.42</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +32.15</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 80 / テクニカル 15 / テーマ 85 / ファンダ 58</span></div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">7</span>
+        <span class="catalyst-code">6855</span>
+        <span class="catalyst-name">日本電子材料</span>
+        <span class="badge badge-neutral">検査・分析機器、半導体検査装置</span>
+        <span class="stock-score">スコア <strong>58.5</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥4,850 <span style="color:var(--red-text);">(+0.21%)</span> ・
+          出来高率 16.36% ・ 売買代金 111億円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>28.1</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥5,558(-12.7%) / 25日¥7,048(-31.2%) / 75日¥6,734(-28.0%)</span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>10.6</strong> / PBR <strong>1.53</strong> / 配当利回り <strong>2.06%</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>DB検索 ／ テーマ: プローブカード (関連: 半導体)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>RIOT</strong> <span style="color:var(--red-text);">(+13.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.36</span> ・ <strong>WULF</strong> <span style="color:var(--red-text);">(+12.8%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.37</span> ・ <strong>NRG</strong> <span style="color:var(--red-text);">(+9.6%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.41</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +37.54</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 82 / テクニカル 15 / テーマ 79 / ファンダ 58</span></div>
+        
+        <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">買い材料</span>
+          <span>半導体検査用プローブカード等の検査部品が主力で、AI・先端半導体向け需要を背景に売上高は前年23,829百万円から29,366百万円へ約23%増、営業利益率24.7%と高収益を維持している。先端品比率の高さが収益性を支える。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">リスク</span>
+          <span>半導体市況の循環性が強く、顧客である半導体メーカーの設備投資・生産調整の影響を直接受ける。メモリやロジックの需要変動次第で検査部品の受注が急減速するリスクがあり、業績の振れ幅が大きい。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">業績ドライバー</span>
+          <span>AI・HPC向け先端半導体のプローブカード需要拡大と、生成AI関連投資に伴う検査需要の積み上がりが次四半期以降の売上を押し上げる見込み。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">決算またぎ</span>
+          <span><span class="badge badge-bull">hold</span> 直近通期売上29,366百万円・EPS426円と前年比で明確な増収増益トレンドを示し、半導体先端品向け検査部品の需要が牽引している。ただし定性情報の詳細が乏しく市況依存度も高いため確信度は中程度。</span>
+        </div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">8</span>
+        <span class="catalyst-code">3036</span>
+        <span class="catalyst-name">アルコニクス</span>
+        <span class="badge badge-neutral">電子機器・部品卸売</span>
+        <span class="stock-score">スコア <strong>58.0</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥2,949 <span style="color:var(--red-text);">(+0.48%)</span> ・
+          出来高率 1.80% ・ 売買代金 16億円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>36.9</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥2,973(-0.8%) / 25日¥3,150(-6.4%) / 75日¥3,183(-7.4%) <span class="badge badge-bear">パーフェクトベア ↘</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>9.6</strong> / PBR <strong>0.79</strong> / 配当利回り <strong>3.22%</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>株探テーマ + industry_map ／ テーマ: 非鉄金属商社 (関連: 半導体製造装置)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>RIOT</strong> <span style="color:var(--red-text);">(+13.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.31</span> ・ <strong>RKLB</strong> <span style="color:var(--red-text);">(+15.4%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.25</span> ・ <strong>VST</strong> <span style="color:var(--red-text);">(+10.6%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.34</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +23.32</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 72 / テクニカル 15 / テーマ 85 / ファンダ 60</span></div>
+        
+        <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">買い材料</span>
+          <span>非鉄金属商社に加え半導体製造装置向け機能材料や製造事業を展開し、売上は197→219千億円へ拡大。レアメタル・チタン・タングステン等の高付加価値素材需要が全体の収益を牽引している。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">リスク</span>
+          <span>商社ビジネスは銅・アルミ等の資源価格と為替に業績が大きく左右され、営業利益率4.4%と薄い構造。中国の自動車・製造需要減速や金属市況下落時にマージンが直接圧迫される。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">業績ドライバー</span>
+          <span>半導体・EV向けレアメタルおよびチタン等先端素材の需要回復と、製造事業の値上げ・数量増が売上に乗ってくるか。</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">決算またぎ</span>
+          <span><span class="badge badge-bull">hold</span> 売上は5期連続で拡大傾向、EPSも164.9→186.6→189.3円と着実に増加しており業績モメンタムは上向き。ただし資源市況・為替次第で商社マージンが振れるため確度は中程度。</span>
+        </div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">9</span>
+        <span class="catalyst-code">6590</span>
+        <span class="catalyst-name">芝浦メカトロニクス</span>
+        <span class="badge badge-neutral">半導体製造装置</span>
+        <span class="stock-score">スコア <strong>58.0</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥2,360 <span style="color:var(--red-text);">(+1.07%)</span> ・
+          出来高率 7.31% ・ 売買代金 114億円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>24.1</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥2,797(-15.6%) / 25日¥3,571(-33.9%) / 75日¥4,033(-41.5%) <span class="badge badge-bear">パーフェクトベア ↘</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>12.4</strong> / PBR <strong>2.77</strong> / 配当利回り <strong>2.84%</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>industry_map ／ テーマ: 半導体搬送装置 (関連: 半導体)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>RIOT</strong> <span style="color:var(--red-text);">(+13.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.31</span> ・ <strong>WULF</strong> <span style="color:var(--red-text);">(+12.8%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.27</span> ・ <strong>ABNB</strong> <span style="color:var(--red-text);">(+11.7%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.26</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +13.31</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 80 / テクニカル 15 / テーマ 79 / ファンダ 58</span></div>
+        
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank">10</span>
+        <span class="catalyst-code">6770</span>
+        <span class="catalyst-name">アルプスＡ</span>
+        <span class="badge badge-neutral">電子機器・部品大手</span>
+        <span class="stock-score">スコア <strong>58.0</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥1,794 <span style="color:var(--blue-text);">(-6.19%)</span> ・
+          出来高率 2.40% ・ 売買代金 90億円</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span> ・RSI(14日): <strong>29.6</strong></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">移動平均</span><span>MA: 5日¥1,892(-5.2%) / 25日¥2,096(-14.4%) / 75日¥2,158(-16.8%) <span class="badge badge-bear">パーフェクトベア ↘</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">出来高</span><span>📈 出来高トレンド: 増加</span></div>
+        <div class="stock-meta-row"><span class="meta-label">ファンダ</span><span>PER <strong>11.6</strong> / PBR <strong>0.79</strong> / 配当利回り <strong>3.57%</strong></span></div>
+        <div class="stock-meta-row">
+          <span class="meta-label">選定理由</span>
+          <span>industry_map ／ テーマ: 車載電子部品 (関連: ハードウェア・電子機器)</span>
+        </div>
+        
+        <div class="stock-meta-row"><span class="meta-label">🔗 連動した米国銘柄</span><span><strong>WULF</strong> <span style="color:var(--red-text);">(+12.8%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.28</span> ・ <strong>RKLB</strong> <span style="color:var(--red-text);">(+15.4%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.23</span> ・ <strong>RIOT</strong> <span style="color:var(--red-text);">(+13.2%)</span> <span style="color:var(--text3);font-size:11px;">r=+0.24</span> <span style="color:var(--text3);font-size:11px;">累積寄与: +24.82</span></span></div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 78 / テクニカル 15 / テーマ 79 / ファンダ 60</span></div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📊 好決算サプライズ × テーマ TOP10</h2>
+    <p class="section-meta">
+      株探イチオシサプライズ「直近3ヶ月のエレフォロ」(業績上振れ確定済み銘柄)
+      から、当日の注目セクター・テーマと連動する銘柄を独立抽出。
+      通常TOP10とは別軸の参考リスト。「翌日値上がり率」は決算発表翌日の実績値。
+    </p>
+    <div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">1</span>
+            <span class="catalyst-code">6266</span>
+            <span class="catalyst-name">タツモ</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>67.2</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>1-3月期(1Q)経常は84％減益で着地</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+21.9%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260515 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥2,309 <span style="color:var(--blue-text);">(-8.01%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>半導体</span></div>
+            
+            <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+            <div class="stock-meta-row">
+              <span class="meta-label">買い材料</span>
+              <span>半導体製造装置とウエハー搬送ロボットが主力で、売上高354億円・営業利益率13.5%を確保。AI向け半導体投資拡大を背景に装置需要が底堅く、ROE14%と資本効率も改善傾向にある。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">リスク</span>
+              <span>半導体市況の循環性が大きく、顧客である半導体メーカーの設備投資意欲が後退すると装置受注が急減するリスク。液晶製造装置は中国パネル投資動向に左右されやすく、受注の端境期で売上が振れやすい。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">業績ドライバー</span>
+              <span>AI・先端半導体向けの塗布装置・搬送ロボット需要と、顧客の設備投資再開による装置受注の積み上がり。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">決算またぎ</span>
+              <span><span class="badge badge-bull">hold</span> 直近通期で売上354億円・EPS244円と前期（EPS218.9円）比で増益基調を維持し、半導体装置需要が底堅い。ただし四半期ごとの売上変動が大きく、受注端境期では一時的に売上が落ち込む点は留意が必要。</span>
+            </div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">2</span>
+            <span class="catalyst-code">6264</span>
+            <span class="catalyst-name">マルマエ</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>66.0</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>今期経常を30％上方修正・最高益予想を上乗せ、配当も7円増額</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+20.9%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260611 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥1,266 <span style="color:var(--blue-text);">(-5.45%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>半導体</span></div>
+            
+            <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+            <div class="stock-meta-row">
+              <span class="meta-label">買い材料</span>
+              <span>半導体製造装置向け精密金属加工が主力で、直近決算の売上は前年比大幅増。先端半導体の設備投資回復を背景にシリコン・タンタル・アルミ加工品の受注が伸び、営業利益率18.4%と高水準を維持している。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">リスク</span>
+              <span>半導体メーカーの設備投資サイクルに業績が連動し、顧客の装置メーカー発注の増減で稼働率が大きく振れる。自己資本比率32%・D/E2.14倍と設備投資先行による財務負担が重く、需要調整局面では固定費回収に下振れリスク。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">業績ドライバー</span>
+              <span>先端半導体・パワー半導体向け加工需要の回復と新工場稼働による生産能力増強が売上に乗ってくる局面。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">決算またぎ</span>
+              <span><span class="badge badge-bull">hold</span> 直近売上高20,434と前年14,022から明確な増収モメンタムが続き、半導体設備投資回復を受けた受注増が業績に反映されている。ただし装置投資サイクル依存で持続性には注意が残り、確信度は中程度。</span>
+            </div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">3</span>
+            <span class="catalyst-code">6323</span>
+            <span class="catalyst-name">ローツェ</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>64.0</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>今期経常を44％上方修正・最高益予想を上乗せ、配当も8円増額</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+15.8%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20261008 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥2,785 <span style="color:var(--blue-text);">(-4.31%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>半導体</span></div>
+            
+            <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+            <div class="stock-meta-row">
+              <span class="meta-label">買い材料</span>
+              <span>半導体ウェハ搬送ロボットで世界トップシェアを持ち、売上高1,288億円・営業利益率24.2%と高収益。AI向け半導体投資拡大を背景に搬送装置需要が旺盛で、売上は前年の1,244億円から着実に拡大基調にある。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">リスク</span>
+              <span>半導体製造装置は設備投資サイクルに連動し、メモリ市況や中国向け需要の変動で受注が大きく振れる。顧客である半導体メーカーの投資計画が後ずれすれば搬送装置需要も鈍化し、高いマージンが圧迫されるリスクがある。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">業績ドライバー</span>
+              <span>AI・先端ロジック向け半導体の設備投資拡大に伴うウェハ搬送ロボット・EFEMの受注増加が次四半期の売上を押し上げる見込み。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">決算またぎ</span>
+              <span><span class="badge badge-bull">hold</span> 売上は124,406→128,794百万円と増収トレンドを維持し、営業利益率24.2%・ROIC17.7%と収益力は堅調。半導体投資回復局面で搬送装置需要が乗りやすいが、設備投資サイクルの振れと市況依存度の高さから確信度は中程度にとどまる。</span>
+            </div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">4</span>
+            <span class="catalyst-code">6227</span>
+            <span class="catalyst-name">ＡＩメカテック</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>63.0</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>7-3月期(3Q累計)経常が186倍増益で着地・1-3月期は黒字浮上</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+16.0%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260515 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥4,025 <span style="color:var(--blue-text);">(-6.07%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>産業機械</span></div>
+            
+            <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+            <div class="stock-meta-row">
+              <span class="meta-label">買い材料</span>
+              <span>半導体・電子部品向け精密塗布・実装装置とインクジェット技術が主力で、直近売上高は210億円と前年比約36%増と伸長。営業利益率10%を確保し、装置需要の回復局面で受注が積み上がっている。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">リスク</span>
+              <span>純利益率1.6%と装置事業特有の収益振れが大きく、半導体・パネル関連の設備投資サイクルに強く依存。顧客の投資抑制や中国・アジア需要の減速が来ると受注・売上が急減するリスクを抱える。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">業績ドライバー</span>
+              <span>半導体後工程・電子部品実装向け装置の受注回復と、インクジェット応用装置の量産採用拡大が次四半期の売上に乗る見込み。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">決算またぎ</span>
+              <span><span class="badge badge-bull">hold</span> 売上高が前年の154億円から210億円へ大きく伸び、装置需要の回復トレンドが業績に反映されつつある。ただしEPSの期変動が激しく利益率が薄いため、受注動向次第で振れる点を勘案し確信度は中程度。</span>
+            </div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">5</span>
+            <span class="catalyst-code">6480</span>
+            <span class="catalyst-name">日本トムソン</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>61.5</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>前期経常が上振れ着地・今期は57％増益、前期配当を1.5円増額・今期は2.5円増配へ</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+26.1%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260511 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥1,229 <span style="color:var(--blue-text);">(-6.82%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>産業機械</span></div>
+            
+            <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+            <div class="stock-meta-row">
+              <span class="meta-label">買い材料</span>
+              <span>直動案内機器・ベアリングを主力とし、半導体製造装置や工作機械向け精密部品の需要回復が業績を牽引。自己資本比率66%と財務基盤が堅固で、売上高は前年から回復基調に転じている。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">リスク</span>
+              <span>工作機械・半導体製造装置向けの設備投資は景気循環の影響を強く受け、中国を含むアジア市場の需要減速や在庫調整が続けば受注が鈍化するリスク。ROE5.1%と資本効率は依然として低水準に留まる。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">業績ドライバー</span>
+              <span>半導体製造装置・工作機械向け精密部品の設備投資需要の回復と、直動案内機器の受注回復が次四半期の売上に乗ってくる可能性。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">決算またぎ</span>
+              <span><span class="badge badge-bull">hold</span> 売上高が前期の底から回復基調にあり、設備投資関連の需要が持ち直しつつある点は業績積み上がりの兆候。ただし短信の具体的な受注残・増益コメントが乏しく、需要回復の確度は限定的。</span>
+            </div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">6</span>
+            <span class="catalyst-code">6140</span>
+            <span class="catalyst-name">旭ダイヤモンド</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>61.2</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>前期経常を一転10％増益に上方修正</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+11.8%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260416 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥986 <span style="color:var(--blue-text);">(-1.30%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>半導体</span></div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">7</span>
+            <span class="catalyst-code">6278</span>
+            <span class="catalyst-name">ユニオンツール</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>61.0</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>今期経常を30％上方修正・最高益予想を上乗せ</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+21.8%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260513 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥9,750 <span style="color:var(--blue-text);">(-9.55%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>産業機械</span></div>
+            
+            <div class="catalyst-divider">🔬 銘柄深掘り分析（Opus）<span class="badge badge-neutral" style="margin-left:6px;">キャッシュ</span></div>
+            <div class="stock-meta-row">
+              <span class="meta-label">買い材料</span>
+              <span>PCB用超硬ドリルやリニアシャフトなどの精密切削工具に強みを持ち、直近期は売上40,165百万円と過去最高水準。営業利益率21.7%と高付加価値の先端加工向け需要を背景に収益力が回復傾向にある。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">リスク</span>
+              <span>PCB用ドリルはスマホ・PC・サーバー基板向け需要に連動し、電子部品市況やAIサーバー投資の一巡で受注が急減しやすい。中国など海外電子機器生産の変動と円高進行がマージンを圧迫するリスクがある。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">業績ドライバー</span>
+              <span>AIサーバー・高多層基板向け超硬ドリルの需要拡大と、精密加工分野の設備投資回復による受注増が次四半期業績に乗る可能性。</span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">決算またぎ</span>
+              <span><span class="badge badge-bull">hold</span> 売上が前年28,015から40,165へ大きく伸び、営業利益率21.7%・自己資本比率90.7%と業績モメンタムと財務基盤は良好。ただ電子部品市況依存で四半期変動が大きく、確度は中程度。</span>
+            </div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">8</span>
+            <span class="catalyst-code">7004</span>
+            <span class="catalyst-name">カナデビア</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>61.0</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>今期経常は62％増益、13円増配へ</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+11.0%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260512 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥916 <span style="color:var(--blue-text);">(-9.58%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>産業機械</span></div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">9</span>
+            <span class="catalyst-code">6492</span>
+            <span class="catalyst-name">岡野バルブ製造</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>61.0</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>上期経常を2.2倍上方修正・18期ぶり最高益、通期も増額、配当も30円増額</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+23.1%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260422 1 ・ 信用</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥9,380 <span style="color:var(--blue-text);">(-9.72%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>産業機械</span></div>
+            
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-card-head">
+            <span class="catalyst-rank">10</span>
+            <span class="catalyst-code">6298</span>
+            <span class="catalyst-name">ワイエイシイＨ</span>
+            <span class="badge badge-neutral">機械</span>
+            <span class="stock-score">スコア <strong>60.8</strong></span>
+          </div>
+          <div class="stock-card-body">
+            <div class="stock-meta-row">
+              <span class="meta-label">📊 サプライズ</span>
+              <span><strong>今期経常は2.5倍増益、5円増配へ</strong></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">翌日値上がり率(実績)</span>
+              <span><strong style="color:var(--red-text);">+18.1%</strong>
+              <span style="color:var(--text3);font-size:11px;">  発表 20260513 1 ・ 貸借</span></span>
+            </div>
+            <div class="stock-meta-row">
+              <span class="meta-label">現在値</span>
+              <span>¥947 <span style="color:var(--blue-text);">(-6.05%)</span></span>
+            </div>
+            <div class="stock-meta-row"><span class="meta-label">テーマ</span><span>半導体</span></div>
+            
+          </div>
+        </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">📉 空売り候補 TOP10（米国 outflow + テクニカル下落 + 過熱）</h2>
+    <p class="section-meta">
+      米国 outflow セクター連動 × テクニカル下落シグナル × バリュエーション過熱・信用買残急増
+      の総合スコア降順。スイングトレードの空売り候補として参考に。
+    </p>
+    <div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">1</span>
+        <span class="catalyst-code">4288</span>
+        <span class="catalyst-name">アズジェント</span>
+        <span class="badge badge-neutral">サイバーセキュリティ</span>
+        <span class="stock-score">空売りスコア <strong>37.3</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥489 <span style="color:var(--blue-text);">(-6.32%)</span> ・出来高率 5.41%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-neutral">⚪ neutral</span>  ・RSI(14日): <strong>42.3</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>PER <strong>37.3</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 78 / 下落 0 / 米国流出 59 / 過熱 20</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">2</span>
+        <span class="catalyst-code">4704</span>
+        <span class="catalyst-name">トレンドマイクロ</span>
+        <span class="badge badge-neutral">セキュリティソフト</span>
+        <span class="stock-score">空売りスコア <strong>35.7</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥6,478 <span style="color:var(--blue-text);">(-8.54%)</span> ・出来高率 1.32%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-neutral">⚪ neutral</span>  ・RSI(14日): <strong>40.0</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>PBR <strong style='color:var(--red-text);'>7.3</strong>(過熱) / 貸借倍率 <strong>7.7倍</strong>(買い長)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 65 / 下落 0 / 米国流出 59 / 過熱 25</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">3</span>
+        <span class="catalyst-code">6721</span>
+        <span class="catalyst-name">ウインテスト</span>
+        <span class="badge badge-neutral">半導体検査装置</span>
+        <span class="stock-score">空売りスコア <strong>34.9</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥118 <span style="color:var(--blue-text);">(-8.53%)</span> ・出来高率 11.06%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-neutral">⚪ neutral</span>  ・RSI(14日): <strong>48.0</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>PER <strong style='color:var(--red-text);'>125.5</strong>(過熱) / PBR <strong style='color:var(--red-text);'>18.7</strong>(過熱) / 貸借倍率 <strong>220.9倍</strong>(買い長)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 78 / 下落 0 / 米国流出 31 / 過熱 50</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">4</span>
+        <span class="catalyst-code">4506</span>
+        <span class="catalyst-name">住友ファーマ</span>
+        <span class="badge badge-neutral">医療用医薬品</span>
+        <span class="stock-score">空売りスコア <strong>34.7</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥1,838 <span style="color:var(--blue-text);">(-11.59%)</span> ・出来高率 1.44%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bull">🟢 buy</span>  ・RSI(14日): <strong>51.6</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>貸借倍率 <strong>14.7倍</strong>(買い長)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 65 / 下落 0 / 米国流出 69 / 過熱 5</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">5</span>
+        <span class="catalyst-code">6857</span>
+        <span class="catalyst-name">アドバンテスト</span>
+        <span class="badge badge-neutral">半導体試験装置</span>
+        <span class="stock-score">空売りスコア <strong>33.8</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥28,015 <span style="color:var(--blue-text);">(-4.99%)</span> ・出来高率 5.05%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span>  ・RSI(14日): <strong>34.6</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>PBR <strong style='color:var(--red-text);'>17.7</strong>(過熱)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 100 / 下落 0 / 米国流出 26 / 過熱 30</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">6</span>
+        <span class="catalyst-code">285A</span>
+        <span class="catalyst-name">キオクシア</span>
+        <span class="badge badge-neutral">半導体メモリ</span>
+        <span class="stock-score">空売りスコア <strong>33.8</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥8,511 <span style="color:var(--blue-text);">(-8.72%)</span> ・出来高率 10.31%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span>  ・RSI(14日): <strong>21.7</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>貸借倍率 <strong>33.0倍</strong>(買い長)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 120 / 下落 0 / 米国流出 26 / 過熱 10</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">7</span>
+        <span class="catalyst-code">6920</span>
+        <span class="catalyst-name">レーザーテック</span>
+        <span class="badge badge-neutral">半導体検査装置</span>
+        <span class="stock-score">空売りスコア <strong>33.2</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥32,040 <span style="color:var(--blue-text);">(-4.56%)</span> ・出来高率 7.63%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span>  ・RSI(14日): <strong>35.0</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>PER <strong>31.9</strong> / PBR <strong style='color:var(--red-text);'>12.0</strong>(過熱) / 貸借倍率 <strong>5.6倍</strong>(買い長)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 97 / 下落 0 / 米国流出 26 / 過熱 30</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">8</span>
+        <span class="catalyst-code">6613</span>
+        <span class="catalyst-name">QDレーザ</span>
+        <span class="badge badge-neutral">半導体レーザー</span>
+        <span class="stock-score">空売りスコア <strong>33.2</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥2,034 <span style="color:var(--blue-text);">(-8.34%)</span> ・出来高率 5.99%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-neutral">⚪ neutral</span>  ・RSI(14日): <strong>44.4</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>PER <strong style='color:var(--red-text);'>193.5</strong>(過熱) / PBR <strong style='color:var(--red-text);'>17.4</strong>(過熱) / 貸借倍率 <strong>162.5倍</strong>(買い長)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 80 / 下落 0 / 米国流出 24 / 過熱 50</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">9</span>
+        <span class="catalyst-code">3652</span>
+        <span class="catalyst-name">ＤＭＰ</span>
+        <span class="badge badge-neutral">GPU・AI向けIPコア</span>
+        <span class="stock-score">空売りスコア <strong>32.1</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥2,200 <span style="color:var(--blue-text);">(-6.06%)</span> ・出来高率 2.81%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span>  ・RSI(14日): <strong>30.9</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>PER <strong style='color:var(--red-text);'>230.6</strong>(過熱)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 70 / 下落 3 / 米国流出 34 / 過熱 35</span></div>
+      </div>
+    </div><div class="stock-card">
+      <div class="stock-card-head">
+        <span class="catalyst-rank" style="background:var(--blue-text);">10</span>
+        <span class="catalyst-code">3692</span>
+        <span class="catalyst-name">ＦＦＲＩＳ</span>
+        <span class="badge badge-neutral">サイバーセキュリティソフト</span>
+        <span class="stock-score">空売りスコア <strong>30.7</strong></span>
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-meta-row">
+          <span class="meta-label">価格</span>
+          <span>¥6,770 <span style="color:var(--blue-text);">(-2.31%)</span> ・出来高率 6.02%</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">テクニカル</span>
+          <span><span class="badge badge-bear">🔴 sell</span>  ・RSI(14日): <strong>40.5</strong></span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">過熱・需給</span>
+          <span>PER <strong>47.3</strong> / PBR <strong style='color:var(--red-text);'>14.2</strong>(過熱)</span>
+        </div>
+        <div class="stock-meta-row">
+          <span class="meta-label">米国整合</span>
+          <span><span class="badge badge-bull">米国inflow（空売り危険）</span></span>
+        </div>
+        <div class="stock-meta-row"><span class="meta-label">スコア内訳</span><span>活況 87 / 下落 0 / 米国流出 19 / 過熱 38</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cost-section">
+    <h2 class="section-title">💰 APIコスト</h2>
+    <div class="cost-grid">
+      <div class="cost-cell">
+        <div class="cost-label">本日</div>
+        <div class="cost-value">¥0</div>
+        <div class="cost-sub">0件</div>
+      </div>
+      <div class="cost-cell">
+        <div class="cost-label">今月累計</div>
+        <div class="cost-value">¥201</div>
+        <div class="cost-sub">7件</div>
+      </div>
+      <div class="cost-cell" style="flex:2;">
+        <div class="cost-label">詳細</div>
+        <a href="https://console.anthropic.com" target="_blank" style="color:var(--blue-text);">https://console.anthropic.com</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    AI分析: Claude Sonnet 4.6 (Phase 1〜7) / Claude Opus 4 (Phase 8)<br>
+    データソース: 立花証券e支店API・Finnhub・KABU+・EDINET DB・Yahoo Finance JP<br>
+    <strong>本レポートはAIによる自動分析です。投資判断は自己責任でお願いします。</strong>
+  </div>
+</div>
+</body>
+</html>
